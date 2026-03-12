@@ -100,7 +100,7 @@ nav.solid{background:rgba(8,6,4,.97);}
    SHARED COMPONENTS
 ═══════════════════════════════════════════ */
 .eyebrow{
-  font-size:9px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;
+  font-size:12px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;
   color:var(--gold);margin-bottom:16px;
 }
 .eyebrow::before{content:'';display:inline-block;width:18px;height:1px;background:var(--gold);vertical-align:middle;margin-right:12px;}
@@ -122,12 +122,12 @@ footer{
   border-bottom:1px solid rgba(184,151,90,.1);
 }
 .footer-brand img{height:52px;margin-bottom:14px;opacity:.85;}
-.footer-brand p{font-size:10px;font-weight:300;letter-spacing:.14em;color:rgba(253,250,245,.35);line-height:1.8;text-transform:uppercase;}
+.footer-brand p{font-size:12px;font-weight:300;letter-spacing:.14em;color:rgba(253,250,245,.35);line-height:1.8;text-transform:uppercase;}
 .footer-col h4{font-size:9px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
-.footer-col p,.footer-col a{font-size:12px;font-weight:300;letter-spacing:.08em;color:rgba(253,250,245,.45);line-height:2;display:block;transition:color .2s;}
+.footer-col p,.footer-col a{font-size:13px;font-weight:300;letter-spacing:.08em;color:rgba(253,250,245,.45);line-height:2;display:block;transition:color .2s;}
 .footer-col a:hover{color:rgba(253,250,245,.75);}
 .footer-bottom{max-width:1200px;margin:28px auto 0;display:flex;justify-content:space-between;align-items:center;}
-.footer-bottom p{font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(253,250,245,.22);}
+.footer-bottom p{font-size:12px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(253,250,245,.22);}
 
 /* ═══════════════════════════════════════════
    PAGE 1 — INICIO
@@ -218,7 +218,7 @@ footer{
   color:var(--white);letter-spacing:-.01em;line-height:1;margin-bottom:6px;
 }
 .stat-num em{font-style:italic;color:var(--gold);}
-.stat-lbl{font-size:8px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.38);}
+.stat-lbl{font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.38);}
 
 /* PILARES */
 .pilares-section{
@@ -243,7 +243,7 @@ footer{
   letter-spacing:-.02em;
 }
 .pilar-title{
-  font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;
+  font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;
   color:var(--gold);margin-bottom:16px;
 }
 .pilar-card h3{
@@ -252,7 +252,7 @@ footer{
 }
 .pilar-card h3 em{font-style:italic;color:var(--cream);}
 .pilar-card p{
-  font-size:13px;font-weight:300;letter-spacing:.04em;
+  font-size:14px;font-weight:300;letter-spacing:.04em;
   color:rgba(253,250,245,.45);line-height:1.85;
 }
 .pilar-rule{width:28px;height:1px;background:rgba(184,151,90,.4);margin:20px 0;}
@@ -266,10 +266,12 @@ footer{
   position:relative;overflow:hidden;
   background:var(--img3) center/cover no-repeat;
   min-height:500px;
+  background-blend-mode:normal;
+  filter:brightness(.65) saturate(.8);
 }
 .valle-img::after{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(to right,transparent 60%,var(--ink) 100%);
+  background:linear-gradient(to right,rgba(8,6,4,.18) 0%,var(--ink) 100%);
 }
 .valle-text{
   background:var(--ink2);
@@ -283,13 +285,13 @@ footer{
 }
 .valle-text h2 em{font-style:italic;color:var(--gold);}
 .valle-text p{
-  font-size:14px;font-weight:300;letter-spacing:.04em;
+  font-size:15px;font-weight:300;letter-spacing:.04em;
   color:rgba(253,250,245,.5);line-height:1.9;margin-bottom:32px;max-width:440px;
 }
 .check-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
 .check-list li{
   display:flex;align-items:center;gap:12px;
-  font-size:11px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;
+  font-size:13px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;
   color:rgba(253,250,245,.65);
 }
 .check-list li::before{
@@ -329,7 +331,7 @@ footer{
 .page-hero-bg{
   position:absolute;inset:-6%;
   background-size:cover;background-position:center;
-  filter:brightness(.55) saturate(.8);
+  filter:brightness(.52) saturate(.8);
 }
 .page-hero-overlay{
   position:absolute;inset:0;
@@ -371,11 +373,11 @@ footer{
   background:rgba(184,151,90,.06);
 }
 .seg-item-title{
-  font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
+  font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
   color:var(--gold);margin-bottom:8px;
 }
 .seg-item p{
-  font-size:13px;font-weight:300;letter-spacing:.04em;
+  font-size:14px;font-weight:300;letter-spacing:.04em;
   color:rgba(253,250,245,.45);line-height:1.8;
 }
 
@@ -403,12 +405,12 @@ footer{
 }
 .entorno-text h2 em{font-style:italic;color:var(--gold);}
 .entorno-text p{
-  font-size:13px;font-weight:300;letter-spacing:.04em;
+  font-size:14px;font-weight:300;letter-spacing:.04em;
   color:rgba(253,250,245,.45);line-height:1.9;margin-bottom:28px;
 }
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;}
 .tag{
-  font-size:8px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
   color:rgba(253,250,245,.45);
   border:1px solid rgba(184,151,90,.2);
   padding:7px 14px;border-radius:2px;
@@ -433,15 +435,15 @@ footer{
 }
 .amen-item:hover{border-color:var(--gold);background:rgba(18,13,8,.9);}
 .amen-num{
-  font-family:var(--serif);font-size:14px;font-weight:300;font-style:italic;
+  font-family:var(--serif);font-size:15px;font-weight:300;font-style:italic;
   color:rgba(184,151,90,.5);margin-bottom:16px;
 }
 .amen-name{
-  font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
   color:var(--white);margin-bottom:10px;
 }
 .amen-desc{
-  font-size:12px;font-weight:300;letter-spacing:.04em;
+  font-size:13px;font-weight:300;letter-spacing:.04em;
   color:rgba(253,250,245,.38);line-height:1.75;
 }
 
@@ -484,7 +486,7 @@ footer{
 }
 .lotes-header h2 em{font-style:italic;color:var(--gold);}
 .lotes-header p{
-  font-size:13px;font-weight:300;letter-spacing:.04em;
+  font-size:14px;font-weight:300;letter-spacing:.04em;
   color:rgba(253,250,245,.42);line-height:1.8;max-width:400px;text-align:right;
 }
 .lotes-specs{
@@ -509,7 +511,7 @@ footer{
   color:rgba(253,250,245,.35);margin-bottom:14px;
 }
 .spec-desc{
-  font-size:12px;font-weight:300;letter-spacing:.04em;
+  font-size:13px;font-weight:300;letter-spacing:.04em;
   color:rgba(253,250,245,.42);line-height:1.75;
 }
 
@@ -568,11 +570,11 @@ footer{
   color:rgba(184,151,90,.45);line-height:1;
 }
 .certeza-item-title{
-  font-size:9px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
+  font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
   color:var(--gold);margin-bottom:5px;
 }
 .certeza-item p{
-  font-size:12px;font-weight:300;color:rgba(253,250,245,.42);line-height:1.7;margin:0;
+  font-size:13px;font-weight:300;color:rgba(253,250,245,.42);line-height:1.7;margin:0;
   border:none;padding:0;
 }
 
@@ -614,8 +616,8 @@ footer{
 }
 .contacto-data{display:flex;flex-direction:column;gap:20px;}
 .contacto-data-item{display:flex;flex-direction:column;gap:4px;}
-.contacto-data-item span{font-size:8px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);}
-.contacto-data-item p{font-size:13px;font-weight:300;color:rgba(253,250,245,.55);line-height:1.6;margin:0;}
+.contacto-data-item span{font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);}
+.contacto-data-item p{font-size:14px;font-weight:300;color:rgba(253,250,245,.55);line-height:1.6;margin:0;}
 
 .contacto-right{
   padding:clamp(48px,8vh,88px) clamp(32px,5vw,64px);
@@ -628,7 +630,7 @@ footer{
 }
 .form-title em{font-style:italic;color:var(--gold);}
 .form-sub{
-  font-size:11px;font-weight:300;letter-spacing:.1em;
+  font-size:12px;font-weight:300;letter-spacing:.1em;
   color:rgba(253,250,245,.35);margin-bottom:36px;
 }
 
@@ -667,7 +669,7 @@ footer{
 .form-btn:hover{background:var(--cream);}
 .form-btn:disabled{opacity:.55;cursor:not-allowed;}
 .form-note{
-  font-size:10px;font-weight:300;letter-spacing:.06em;
+  font-size:12px;font-weight:300;letter-spacing:.06em;
   color:rgba(253,250,245,.28);text-align:center;margin-top:12px;
 }
 
@@ -892,7 +894,7 @@ footer{
   <section class="entorno-section">
     <div class="entorno-text">
       <p class="eyebrow">Entorno natural</p>
-      <h2>Montañas, nogales<br>y <em>silencio.</em></h2>
+      <h2>Montañas, nogales<br>y <em>tranquilidad.</em></h2>
       <p>El Barreal del Ojo de Agua es un valle singular en el corazón de Coahuila. Terragona aprovecha este paisaje único para crear un desarrollo que integra la naturaleza con la vida privada y la calidad de construcción.</p>
       <p>La Sierra de Parras enmarca cada lote. Los nogales centenarios dan sombra y carácter al lugar. El clima seco y soleado de Parras hace de este entorno un lugar excepcional para vivir o invertir.</p>
       <div class="tag-row">
