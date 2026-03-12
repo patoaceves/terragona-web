@@ -46,17 +46,17 @@ a{color:inherit;text-decoration:none;}
 nav {
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 clamp(24px,5vw,72px);height:80px;
+  padding:0 clamp(24px,5vw,72px);height:112px;
   background:rgba(8,6,4,.82);
   border-bottom:1px solid rgba(184,151,90,.1);
   backdrop-filter:blur(18px);
   transition:background .3s;
 }
 nav.solid{background:rgba(8,6,4,.97);}
-.nav-logo img{height:48px;width:auto;opacity:.92;filter:brightness(1.1);}
+.nav-logo img{height:96px;width:auto;opacity:.92;filter:brightness(1.1);}
 .nav-links{display:flex;gap:40px;list-style:none;}
 .nav-links a{
-  font-size:9px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;
+  font-size:18px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;
   color:rgba(253,250,245,.45);transition:color .2s;
 }
 .nav-links a:hover,.nav-links a.active{color:var(--gold);}
@@ -93,7 +93,7 @@ nav.solid{background:rgba(8,6,4,.97);}
 /* ═══════════════════════════════════════════
    PAGE SYSTEM
 ═══════════════════════════════════════════ */
-.page{display:none;min-height:100vh;padding-top:80px;}
+.page{display:none;min-height:100vh;padding-top:112px;}
 .page.active{display:block;}
 
 /* ═══════════════════════════════════════════
@@ -176,12 +176,13 @@ footer{
 .btn-primary:hover{background:var(--cream);}
 .btn-ghost{
   font-size:9px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
-  color:rgba(253,250,245,.55);
+  color:rgba(253,250,245,.82);
   padding:14px 28px;border-radius:2px;
-  border:1px solid rgba(253,250,245,.18);cursor:pointer;
-  transition:border-color .2s,color .2s;
+  border:1px solid rgba(253,250,245,.45);cursor:pointer;
+  transition:border-color .2s,color .2s,background .2s;
+  background:rgba(253,250,245,.06);
 }
-.btn-ghost:hover{border-color:rgba(253,250,245,.45);color:rgba(253,250,245,.85);}
+.btn-ghost:hover{border-color:rgba(253,250,245,.75);color:var(--white);background:rgba(253,250,245,.12);}
 
 /* Hero scroll indicator */
 .hero-scroll{
@@ -328,11 +329,11 @@ footer{
 .page-hero-bg{
   position:absolute;inset:-6%;
   background-size:cover;background-position:center;
-  filter:brightness(.3) saturate(.65);
+  filter:brightness(.55) saturate(.8);
 }
 .page-hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to top,var(--ink) 0%,rgba(8,6,4,.3) 60%);
+  background:linear-gradient(to top,var(--ink) 0%,rgba(8,6,4,.05) 50%,transparent 100%);
 }
 .page-hero-content{
   position:absolute;inset:0;
@@ -452,12 +453,12 @@ footer{
 }
 .mp-hero-bg{
   position:absolute;inset:-5%;
-  background:var(--img1) center/cover no-repeat;
-  filter:brightness(.42) saturate(.75);
+  background:var(--img4) center/cover no-repeat;
+  filter:brightness(.52) saturate(.8);
 }
 .mp-hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to top,var(--ink) 0%,rgba(8,6,4,.15) 55%);
+  background:linear-gradient(to top,var(--ink) 0%,rgba(8,6,4,.05) 50%,transparent 100%);
 }
 .mp-hero-content{
   position:absolute;inset:0;
@@ -803,7 +804,7 @@ footer{
 
   <!-- VALLE -->
   <section class="valle-section">
-    <div class="valle-img" style="background-image:var(--img3);"></div>
+    <div class="valle-img" style="background-image:var(--img4);"></div>
     <div class="valle-text">
       <p class="eyebrow">El lugar</p>
       <h2>El valle de<br><em>Parras.</em></h2>
