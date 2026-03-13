@@ -239,7 +239,7 @@ footer{
 .pilar-card:hover{background:rgba(18,13,8,.9);}
 .pilar-num{
   font-family:var(--serif);font-size:64px;font-weight:300;
-  color:rgba(184,151,90,.12);line-height:1;margin-bottom:28px;
+  color:rgba(184,151,90,.55);line-height:1;margin-bottom:28px;
   letter-spacing:-.02em;
 }
 .pilar-title{
@@ -441,8 +441,8 @@ footer{
 }
 .amen-item:hover{border-color:var(--gold);background:rgba(18,13,8,.9);}
 .amen-num{
-  font-family:var(--serif);font-size:15px;font-weight:300;font-style:italic;
-  color:rgba(184,151,90,.5);margin-bottom:16px;
+  font-family:var(--serif);font-size:42px;font-weight:300;font-style:italic;
+  color:rgba(184,151,90,.72);line-height:1;margin-bottom:12px;
 }
 .amen-name{
   font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
@@ -657,7 +657,7 @@ footer{
 .fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{
   border-color:var(--gold);background:rgba(253,250,245,.09);
 }
-.fgroup input::placeholder,.fgroup textarea::placeholder{color:rgba(253,250,245,.22);}
+.fgroup input::placeholder,.fgroup textarea::placeholder{color:rgba(253,250,245,.42);}
 .fgroup select option{color:#1a1208;background:#e8dcc8;}
 .fgroup textarea{resize:vertical;min-height:100px;line-height:1.6;}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -676,7 +676,7 @@ footer{
 .form-btn:disabled{opacity:.55;cursor:not-allowed;}
 .form-note{
   font-size:12px;font-weight:300;letter-spacing:.06em;
-  color:rgba(253,250,245,.28);text-align:center;margin-top:12px;
+  color:rgba(253,250,245,.55);text-align:center;margin-top:12px;
 }
 
 /* ═══════════════════════════════════════════
@@ -692,6 +692,7 @@ footer{
 @media(max-width:860px){
   .nav-links,.nav-cta{display:none;}
   .nav-burger{display:flex;}
+  .hero-content{padding-top:128px;}
   .stats-inner{grid-template-columns:repeat(2,1fr);}
   .stat{border-right:none;border-bottom:1px solid rgba(184,151,90,.1);}
   .stat:nth-child(odd){border-right:1px solid rgba(184,151,90,.1);}
