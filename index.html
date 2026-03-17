@@ -16,10 +16,12 @@
   --ink:    #3C3B22;
   --ink2:   #2D250A;
   --olive:  #3C3B22;
-  --cream:  #EDECE0;
-  --gold:   #9D7A59;
+  --cream:  #F5F0E8;
+  --gold:   #C8B49A;
   --white:  #FDFAF5;
   --muted:  rgba(253,250,245,.55);
+  --earth:  #8B6F4E;
+  --deep:   #5C4A32;
   --serif:  'Cormorant Garamond', serif;
   --sans:   'Jost', sans-serif;
   --img1:   url('https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/699e752d2837e831e7676560.png');
@@ -63,11 +65,11 @@ nav.solid{background:rgba(60,59,34,.97);}
 .nav-links a:hover,.nav-links a.active{color:var(--gold);}
 .nav-cta{
   font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--ink);background:var(--gold);
+  color:var(--white);background:var(--deep);
   padding:10px 22px;border-radius:2px;
   transition:background .2s;cursor:pointer;border:none;
 }
-.nav-cta:hover{background:var(--cream);}
+.nav-cta:hover{background:var(--earth);}
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
 .nav-burger span{width:24px;height:1px;background:rgba(253,250,245,.6);transition:.3s;}
 
@@ -114,7 +116,7 @@ nav.solid{background:rgba(60,59,34,.97);}
    FOOTER
 ═══════════════════════════════════════════ */
 footer{
-  background:var(--ink2);border-top:1px solid rgba(184,151,90,.12);
+  background:rgba(45,37,10,.92);border-top:1px solid rgba(200,180,154,.15);
   padding:48px clamp(24px,5vw,72px) 32px;
 }
 .footer-grid{
@@ -170,11 +172,11 @@ footer{
 .hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
 .btn-primary{
   font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--ink);background:var(--gold);
+  color:var(--white);background:var(--deep);
   padding:14px 28px;border-radius:2px;border:none;cursor:pointer;
   transition:background .2s;
 }
-.btn-primary:hover{background:var(--cream);}
+.btn-primary:hover{background:var(--earth);}
 .btn-ghost{
   font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
   color:rgba(253,250,245,.82);
@@ -234,10 +236,13 @@ footer{
 .pilares-header h2 em{font-style:italic;color:var(--gold);}
 .pilares-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,151,90,.1);}
 .pilar-card{
-  background:var(--ink2);padding:48px 36px;
+  background:rgba(45,37,10,.55);padding:48px 36px;
+  border:1px solid rgba(200,180,154,.1);
+  border-left:2px solid rgba(139,111,78,.6);
+  backdrop-filter:blur(8px);
   transition:background .3s;
 }
-.pilar-card:hover{background:rgba(18,13,8,.9);}
+.pilar-card:hover{background:rgba(45,37,10,.72);}
 .pilar-num{
   font-family:var(--serif);font-size:40px;font-weight:300;
   color:rgba(184,151,90,.72);line-height:1;margin-bottom:16px;
@@ -277,7 +282,7 @@ footer{
   background:linear-gradient(to right,rgba(60,59,34,.1) 0%,var(--ink2) 100%);
 }
 .valle-text{
-  background:var(--ink2);
+  background:rgba(45,37,10,.9);
   padding:clamp(48px,7vh,96px) clamp(32px,5vw,72px);
   display:flex;flex-direction:column;justify-content:center;
 }
@@ -365,7 +370,10 @@ footer{
 .seg-header h2 em{font-style:italic;color:var(--gold);}
 .seg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(184,151,90,.1);margin-bottom:64px;}
 .seg-item{
-  background:var(--ink2);padding:40px 36px;
+  background:rgba(45,37,10,.55);padding:40px 36px;
+  border:1px solid rgba(200,180,154,.1);
+  border-left:2px solid rgba(139,111,78,.5);
+  backdrop-filter:blur(6px);
   display:flex;gap:20px;align-items:flex-start;
 }
 .seg-icon{
@@ -402,7 +410,7 @@ footer{
   background:linear-gradient(to left,rgba(60,59,34,.08) 0%,var(--ink2) 100%);
 }
 .entorno-text{
-  background:var(--ink2);
+  background:rgba(45,37,10,.9);
   padding:clamp(48px,7vh,88px) clamp(32px,5vw,72px);
   display:flex;flex-direction:column;justify-content:center;
 }
@@ -436,11 +444,12 @@ footer{
 .amen-header h2 em{font-style:italic;color:var(--gold);}
 .amen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,151,90,.1);}
 .amen-item{
-  background:var(--ink2);padding:36px 28px;
+  background:rgba(45,37,10,.55);padding:36px 28px;
   border-top:2px solid transparent;
+  backdrop-filter:blur(6px);
   transition:border-color .3s,background .3s;
 }
-.amen-item:hover{border-color:var(--gold);background:rgba(18,13,8,.9);}
+.amen-item:hover{border-color:var(--gold);background:rgba(45,37,10,.72);}
 .amen-num{
   font-family:var(--serif);font-size:26px;font-weight:300;font-style:italic;
   color:rgba(184,151,90,.72);margin-bottom:10px;
@@ -501,7 +510,9 @@ footer{
   background:rgba(184,151,90,.1);margin-bottom:1px;
 }
 .spec-card{
-  background:var(--ink2);padding:44px 36px;
+  background:rgba(45,37,10,.55);padding:44px 36px;
+  border:1px solid rgba(200,180,154,.1);
+  backdrop-filter:blur(8px);
   position:relative;overflow:hidden;
 }
 .spec-card::before{
@@ -567,9 +578,11 @@ footer{
 .certeza-item{
   display:grid;grid-template-columns:48px 1fr;gap:16px;
   padding:20px 24px;
-  background:rgba(253,250,245,.03);
-  border:1px solid rgba(184,151,90,.12);
+  background:rgba(45,37,10,.45);
+  border:1px solid rgba(200,180,154,.12);
+  border-left:2px solid rgba(139,111,78,.55);
   border-radius:2px;
+  backdrop-filter:blur(6px);
   align-items:start;
 }
 .certeza-num{
@@ -628,7 +641,7 @@ footer{
 
 .contacto-right{
   padding:clamp(48px,8vh,88px) clamp(32px,5vw,64px);
-  background:var(--ink);
+  background:rgba(60,59,34,.95);
   display:flex;flex-direction:column;justify-content:center;
 }
 .form-title{
@@ -668,12 +681,12 @@ footer{
 
 .form-btn{
   width:100%;padding:15px;margin-top:8px;
-  background:var(--gold);border:none;border-radius:2px;
-  color:var(--ink);font-family:var(--sans);
+  background:var(--deep);border:none;border-radius:2px;
+  color:var(--white);font-family:var(--sans);
   font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;
   cursor:pointer;transition:background .2s;
 }
-.form-btn:hover{background:var(--cream);}
+.form-btn:hover{background:var(--earth);}
 .form-btn:disabled{opacity:.55;cursor:not-allowed;}
 .form-note{
   font-size:12px;font-weight:300;letter-spacing:.06em;
