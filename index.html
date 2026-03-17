@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terragona — Privada Residencial · Parras de la Fuente</title>
+<link rel="icon" type="image/png" href="/isotipo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -12,13 +13,13 @@
    TOKENS
 ═══════════════════════════════════════════ */
 :root {
-  --ink:    #080604;
-  --ink2:   #0D0A06;
-  --olive:  #3A4728;
-  --cream:  #E8DCC8;
-  --gold:   #B8975A;
+  --ink:    #2D250A;
+  --ink2:   #3C3B22;
+  --olive:  #3C3B22;
+  --cream:  #EDECE0;
+  --gold:   #9D7A59;
   --white:  #FDFAF5;
-  --muted:  rgba(253,250,245,.45);
+  --muted:  rgba(253,250,245,.55);
   --serif:  'Cormorant Garamond', serif;
   --sans:   'Jost', sans-serif;
   --img1:   url('https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/699e752d2837e831e7676560.png');
@@ -47,12 +48,12 @@ nav {
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 clamp(24px,5vw,72px);height:112px;
-  background:rgba(8,6,4,.82);
+  background:rgba(45,37,10,.88);
   border-bottom:1px solid rgba(184,151,90,.1);
   backdrop-filter:blur(18px);
   transition:background .3s;
 }
-nav.solid{background:rgba(8,6,4,.97);}
+nav.solid{background:rgba(45,37,10,.97);}
 .nav-logo img{height:96px;width:auto;opacity:.92;filter:brightness(1.1);}
 .nav-links{display:flex;gap:40px;list-style:none;}
 .nav-links a{
@@ -75,7 +76,7 @@ nav.solid{background:rgba(8,6,4,.97);}
 ═══════════════════════════════════════════ */
 .mobile-menu{
   display:none;position:fixed;inset:0;z-index:99;
-  background:rgba(8,6,4,.97);backdrop-filter:blur(24px);
+  background:rgba(45,37,10,.97);backdrop-filter:blur(24px);
   flex-direction:column;align-items:center;justify-content:center;gap:36px;
 }
 .mobile-menu.open{display:flex;}
@@ -141,12 +142,12 @@ footer{
 .hero-bg{
   position:absolute;inset:-8%;
   background:var(--img1) center/cover no-repeat;
-  filter:brightness(.38) saturate(.7);
+  filter:brightness(.48) saturate(.8);
   animation:bgDrift 28s ease-in-out infinite alternate;
 }
 .hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(160deg,rgba(8,6,4,.72) 0%,rgba(8,6,4,.18) 55%,rgba(8,6,4,.82) 100%);
+  background:linear-gradient(160deg,rgba(45,37,10,.62) 0%,rgba(45,37,10,.12) 55%,rgba(45,37,10,.72) 100%);
 }
 .hero-content{
   position:absolute;inset:0;
@@ -201,7 +202,7 @@ footer{
 
 /* STATS BAR */
 .stats-bar{
-  background:rgba(13,10,6,.95);border-bottom:1px solid rgba(184,151,90,.12);
+  background:rgba(60,59,34,.95);border-bottom:1px solid rgba(184,151,90,.12);
   padding:0 clamp(24px,5vw,72px);
 }
 .stats-inner{
@@ -269,11 +270,11 @@ footer{
 }
 .valle-img::before{
   content:'';position:absolute;inset:0;z-index:1;
-  background:rgba(8,6,4,.45);
+  background:rgba(45,37,10,.32);
 }
 .valle-img::after{
   content:'';position:absolute;inset:0;z-index:2;
-  background:linear-gradient(to right,rgba(8,6,4,.1) 0%,var(--ink2) 100%);
+  background:linear-gradient(to right,rgba(45,37,10,.1) 0%,var(--ink2) 100%);
 }
 .valle-text{
   background:var(--ink2);
@@ -309,9 +310,9 @@ footer{
 .cta-strip-bg{
   position:absolute;inset:0;
   background:var(--img4) center/cover no-repeat;
-  filter:brightness(.14) saturate(.4);
+  filter:brightness(.28) saturate(.6);
 }
-.cta-strip-overlay{position:absolute;inset:0;background:rgba(8,6,4,.72);}
+.cta-strip-overlay{position:absolute;inset:0;background:rgba(45,37,10,.58);}
 .cta-strip-content{position:relative;z-index:1;}
 .cta-strip h2{
   font-family:var(--serif);font-size:clamp(32px,4vw,54px);font-weight:300;
@@ -333,11 +334,11 @@ footer{
 .page-hero-bg{
   position:absolute;inset:-5%;
   background-size:cover;background-position:center;
-  filter:brightness(.52) saturate(.8);
+  filter:brightness(.62) saturate(.85);
 }
 .page-hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to top,var(--ink) 0%,rgba(8,6,4,.05) 50%,transparent 100%);
+  background:linear-gradient(to top,var(--ink) 0%,rgba(45,37,10,.05) 50%,transparent 100%);
 }
 .page-hero-content{
   position:absolute;inset:0;
@@ -394,11 +395,11 @@ footer{
 }
 .entorno-img::before{
   content:'';position:absolute;inset:0;z-index:1;
-  background:rgba(8,6,4,.42);
+  background:rgba(45,37,10,.42);
 }
 .entorno-img::after{
   content:'';position:absolute;inset:0;z-index:2;
-  background:linear-gradient(to left,rgba(8,6,4,.08) 0%,var(--ink2) 100%);
+  background:linear-gradient(to left,rgba(45,37,10,.08) 0%,var(--ink2) 100%);
 }
 .entorno-text{
   background:var(--ink2);
@@ -462,11 +463,11 @@ footer{
 .mp-hero-bg{
   position:absolute;inset:-5%;
   background:var(--img4) center/cover no-repeat;
-  filter:brightness(.52) saturate(.8);
+  filter:brightness(.62) saturate(.85);
 }
 .mp-hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to top,var(--ink) 0%,rgba(8,6,4,.05) 50%,transparent 100%);
+  background:linear-gradient(to top,var(--ink) 0%,rgba(45,37,10,.05) 50%,transparent 100%);
 }
 .mp-hero-content{
   position:absolute;inset:0;
@@ -529,7 +530,7 @@ footer{
 }
 .plano-overlay{
   position:absolute;inset:0;
-  background:rgba(8,6,4,.62);
+  background:rgba(45,37,10,.52);
   backdrop-filter:blur(1px);
 }
 .plano-content{
@@ -598,11 +599,11 @@ footer{
 .contacto-left-bg{
   position:absolute;inset:0;
   background:var(--img4) center/cover no-repeat;
-  filter:brightness(.28) saturate(.5);
+  filter:brightness(.38) saturate(.65);
 }
 .contacto-left-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to right,rgba(8,6,4,.85) 0%,rgba(8,6,4,.45) 100%);
+  background:linear-gradient(to right,rgba(45,37,10,.85) 0%,rgba(45,37,10,.45) 100%);
 }
 .contacto-left-content{
   position:relative;z-index:1;
