@@ -4,19 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terragona — Privada Residencial · Parras de la Fuente</title>
-<link rel="icon" type="image/png" href="/isotipo.png">
+<link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/69bd7b4afd4388ac7e44a139.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════
-   TOKENS
-═══════════════════════════════════════════ */
 :root {
   --ink:    #3C3B22;
-  --ink2:   #2D250A;
+  --ink2:   #2D250A;   /* darkest green — nav + footer */
+  --moss:   #3A4220;   /* mossy section bg */
   --olive:  #3C3B22;
   --cream:  #F5F0E8;
+  --cream2: #EDE6D8;
   --gold:   #C8B49A;
   --white:  #FDFAF5;
   --muted:  rgba(253,250,245,.55);
@@ -28,172 +27,81 @@
   --img2:   url('https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/69aaec266805aafe98b53266.png');
   --img3:   url('https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/69aaec25a4f76312a452754d.png');
   --img4:   url('https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/69b1d3b1c2389c22a7594ff5.jpg');
-  --logo:   url('https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/699e7be15dfd50f729069032.png');
 }
 
-/* ═══════════════════════════════════════════
-   RESET & BASE
-═══════════════════════════════════════════ */
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
-  font-family:var(--sans);color:var(--white);
-  background:var(--ink);overflow-x:hidden;
-}
+body{font-family:var(--sans);color:var(--white);background:var(--ink2);overflow-x:hidden;}
 img{display:block;max-width:100%;}
 a{color:inherit;text-decoration:none;}
 
-/* ═══════════════════════════════════════════
-   NAV
-═══════════════════════════════════════════ */
+/* ═══ NAV — dark green ═══ */
 nav {
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 clamp(24px,5vw,72px);height:112px;
-  background:rgba(60,59,34,.88);
-  border-bottom:1px solid rgba(184,151,90,.1);
+  background:rgba(30,22,4,.95);
+  border-bottom:1px solid rgba(184,151,90,.12);
   backdrop-filter:blur(18px);
   transition:background .3s;
 }
-nav.solid{background:rgba(60,59,34,.97);}
+nav.solid{background:rgba(22,16,2,.99);}
 .nav-logo img{height:96px;width:auto;opacity:.92;filter:brightness(1.1);}
 .nav-links{display:flex;gap:40px;list-style:none;}
-.nav-links a{
-  font-size:12px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;
-  color:rgba(253,250,245,.45);transition:color .2s;
-}
+.nav-links a{font-size:12px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:rgba(253,250,245,.42);transition:color .2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--gold);}
-.nav-cta{
-  font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--white);background:var(--deep);
-  padding:10px 22px;border-radius:2px;
-  transition:background .2s;cursor:pointer;border:none;
-}
+.nav-cta{font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--deep);padding:10px 22px;border-radius:2px;transition:background .2s;cursor:pointer;border:none;}
 .nav-cta:hover{background:var(--earth);}
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
 .nav-burger span{width:24px;height:1px;background:rgba(253,250,245,.6);transition:.3s;}
 
-/* ═══════════════════════════════════════════
-   MOBILE NAV
-═══════════════════════════════════════════ */
-.mobile-menu{
-  display:none;position:fixed;inset:0;z-index:99;
-  background:rgba(60,59,34,.97);backdrop-filter:blur(24px);
-  flex-direction:column;align-items:center;justify-content:center;gap:36px;
-}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:rgba(22,16,2,.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:36px;}
 .mobile-menu.open{display:flex;}
-.mobile-menu a{
-  font-family:var(--serif);font-size:32px;font-weight:300;
-  color:rgba(253,250,245,.6);letter-spacing:.05em;transition:color .2s;
-}
+.mobile-menu a{font-family:var(--serif);font-size:32px;font-weight:300;color:rgba(253,250,245,.6);letter-spacing:.05em;transition:color .2s;}
 .mobile-menu a:hover,.mobile-menu a.active{color:var(--white);}
-.mobile-close{
-  position:absolute;top:28px;right:28px;
-  font-size:12px;letter-spacing:.25em;text-transform:uppercase;
-  color:rgba(253,250,245,.35);cursor:pointer;
-}
+.mobile-close{position:absolute;top:28px;right:28px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.35);cursor:pointer;}
 
-/* ═══════════════════════════════════════════
-   PAGE SYSTEM
-═══════════════════════════════════════════ */
 .page{display:none;min-height:100vh;padding-top:112px;}
 .page.active{display:block;}
 
-/* ═══════════════════════════════════════════
-   SHARED COMPONENTS
-═══════════════════════════════════════════ */
-.eyebrow{
-  font-size:12px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:16px;
-}
+/* ═══ SHARED ═══ */
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
 .eyebrow::before{content:'';display:inline-block;width:18px;height:1px;background:var(--gold);vertical-align:middle;margin-right:12px;}
-
-.section-rule{width:1px;height:60px;background:linear-gradient(to bottom,rgba(184,151,90,.4),transparent);margin:0 auto 40px;}
-
+.eyebrow.dark{color:var(--earth);}
+.eyebrow.dark::before{background:var(--earth);}
 .gold-rule{width:40px;height:1px;background:var(--gold);margin:18px 0;}
 
-/* ═══════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════ */
+/* ═══ FOOTER — dark green ═══ */
 footer{
-  background:rgba(45,37,10,.92);border-top:1px solid rgba(200,180,154,.15);
+  background:rgba(22,16,2,.98);
+  border-top:1px solid rgba(200,180,154,.12);
   padding:48px clamp(24px,5vw,72px) 32px;
 }
-.footer-grid{
-  display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;
-  max-width:1200px;margin:0 auto;padding-bottom:40px;
-  border-bottom:1px solid rgba(184,151,90,.1);
-}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto;padding-bottom:40px;border-bottom:1px solid rgba(184,151,90,.1);}
 .footer-brand img{height:80px;margin-bottom:14px;opacity:.9;}
-.footer-brand p{font-size:12px;font-weight:300;letter-spacing:.14em;color:rgba(253,250,245,.35);line-height:1.8;text-transform:uppercase;}
+.footer-brand p{font-size:12px;font-weight:300;letter-spacing:.14em;color:rgba(253,250,245,.3);line-height:1.8;text-transform:uppercase;}
 .footer-col h4{font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
-.footer-col p,.footer-col a{font-size:13px;font-weight:300;letter-spacing:.08em;color:rgba(253,250,245,.45);line-height:2;display:block;transition:color .2s;}
-.footer-col a:hover{color:rgba(253,250,245,.75);}
+.footer-col p,.footer-col a{font-size:13px;font-weight:300;letter-spacing:.08em;color:rgba(253,250,245,.38);line-height:2;display:block;transition:color .2s;}
+.footer-col a:hover{color:rgba(253,250,245,.72);}
 .footer-bottom{max-width:1200px;margin:28px auto 0;display:flex;justify-content:space-between;align-items:center;}
-.footer-bottom p{font-size:12px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(253,250,245,.22);}
+.footer-bottom p{font-size:12px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(253,250,245,.18);}
 
-/* ═══════════════════════════════════════════
+/* ═══════════════════════════════════════
    PAGE 1 — INICIO
-═══════════════════════════════════════════ */
-
-/* HERO */
-.hero{
-  position:relative;height:calc(100vh - 80px);min-height:600px;
-  overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:-8%;
-  background:var(--img1) center/cover no-repeat;
-  filter:brightness(.48) saturate(.8);
-  animation:bgDrift 28s ease-in-out infinite alternate;
-}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(160deg,rgba(60,59,34,.62) 0%,rgba(60,59,34,.12) 55%,rgba(60,59,34,.72) 100%);
-}
-.hero-content{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:clamp(40px,6vw,80px);
-  max-width:900px;
-}
+═══════════════════════════════════════ */
+.hero{position:relative;height:calc(100vh - 80px);min-height:600px;overflow:hidden;}
+.hero-bg{position:absolute;inset:-8%;background:var(--img1) center/cover no-repeat;filter:brightness(.48) saturate(.8);animation:bgDrift 28s ease-in-out infinite alternate;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(30,22,4,.68) 0%,rgba(58,66,20,.18) 55%,rgba(30,22,4,.75) 100%);}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(40px,6vw,80px);max-width:900px;}
 .hero-content .eyebrow{margin-bottom:20px;}
-.hero h1{
-  font-family:var(--serif);font-size:clamp(44px,5.5vw,80px);font-weight:300;
-  line-height:1.05;letter-spacing:-.01em;color:var(--white);
-  margin-bottom:24px;
-}
+.hero h1{font-family:var(--serif);font-size:clamp(44px,5.5vw,80px);font-weight:300;line-height:1.05;letter-spacing:-.01em;color:var(--white);margin-bottom:24px;}
 .hero h1 em{font-style:italic;color:var(--cream);}
-.hero-sub{
-  font-size:14px;font-weight:300;letter-spacing:.06em;
-  color:rgba(253,250,245,.55);line-height:1.8;
-  max-width:480px;margin-bottom:36px;
-}
+.hero-sub{font-size:14px;font-weight:300;letter-spacing:.06em;color:rgba(253,250,245,.52);line-height:1.8;max-width:480px;margin-bottom:36px;}
 .hero-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-.btn-primary{
-  font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--white);background:var(--deep);
-  padding:14px 28px;border-radius:2px;border:none;cursor:pointer;
-  transition:background .2s;
-}
+.btn-primary{font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--deep);padding:14px 28px;border-radius:2px;border:none;cursor:pointer;transition:background .2s;}
 .btn-primary:hover{background:var(--earth);}
-.btn-ghost{
-  font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
-  color:rgba(253,250,245,.82);
-  padding:14px 28px;border-radius:2px;
-  border:1px solid rgba(253,250,245,.45);cursor:pointer;
-  transition:border-color .2s,color .2s,background .2s;
-  background:rgba(253,250,245,.06);
-}
+.btn-ghost{font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(253,250,245,.82);padding:14px 28px;border-radius:2px;border:1px solid rgba(253,250,245,.4);cursor:pointer;transition:border-color .2s,color .2s,background .2s;background:rgba(253,250,245,.06);}
 .btn-ghost:hover{border-color:rgba(253,250,245,.75);color:var(--white);background:rgba(253,250,245,.12);}
-
-/* Hero scroll indicator */
-.hero-scroll{
-  position:absolute;bottom:36px;right:clamp(24px,5vw,80px);
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-}
-.hero-scroll span{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:rgba(253,250,245,.28);}
-.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(184,151,90,.5),transparent);}
 
 @keyframes bgDrift{
   0%{transform:scale(1) translate(0,0);}
@@ -202,500 +110,193 @@ footer{
   100%{transform:scale(1.03) translate(14px,4px) rotate(.1deg);}
 }
 
-/* STATS BAR */
-.stats-bar{
-  background:rgba(45,37,10,.95);border-bottom:1px solid rgba(184,151,90,.12);
-  padding:0 clamp(24px,5vw,72px);
-}
-.stats-inner{
-  max-width:1200px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(4,1fr);
-}
-.stat{
-  padding:28px 0;text-align:center;
-  border-right:1px solid rgba(184,151,90,.1);
-}
+/* STATS — mossy green */
+.stats-bar{background:rgba(42,48,22,.96);border-bottom:1px solid rgba(184,151,90,.12);padding:0 clamp(24px,5vw,72px);}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
+.stat{padding:28px 0;text-align:center;border-right:1px solid rgba(184,151,90,.1);}
 .stat:last-child{border-right:none;}
-.stat-num{
-  font-family:var(--serif);font-size:36px;font-weight:300;
-  color:var(--white);letter-spacing:-.01em;line-height:1;margin-bottom:6px;
-}
+.stat-num{font-family:var(--serif);font-size:36px;font-weight:300;color:var(--white);letter-spacing:-.01em;line-height:1;margin-bottom:6px;}
 .stat-num em{font-style:italic;color:var(--gold);}
-.stat-lbl{font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.38);}
+.stat-lbl{font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.35);}
 
-/* PILARES */
-.pilares-section{
-  padding:clamp(72px,10vh,120px) clamp(24px,5vw,72px);
-  max-width:1200px;margin:0 auto;
-}
+/* PILARES — dark olive */
+.pilares-section{padding:clamp(72px,10vh,120px) clamp(24px,5vw,72px);max-width:1200px;margin:0 auto;}
 .pilares-header{text-align:center;margin-bottom:64px;}
-.pilares-header h2{
-  font-family:var(--serif);font-size:clamp(36px,4vw,58px);font-weight:300;
-  color:var(--white);line-height:1.1;
-}
+.pilares-header h2{font-family:var(--serif);font-size:clamp(36px,4vw,58px);font-weight:300;color:var(--white);line-height:1.1;}
 .pilares-header h2 em{font-style:italic;color:var(--gold);}
 .pilares-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,151,90,.1);}
-.pilar-card{
-  background:rgba(45,37,10,.55);padding:48px 36px;
-  border:1px solid rgba(200,180,154,.1);
-  border-left:2px solid rgba(139,111,78,.6);
-  backdrop-filter:blur(8px);
-  transition:background .3s;
-}
-.pilar-card:hover{background:rgba(45,37,10,.72);}
-.pilar-num{
-  font-family:var(--serif);font-size:40px;font-weight:300;
-  color:rgba(184,151,90,.72);line-height:1;margin-bottom:16px;
-  letter-spacing:-.01em;
-}
-.pilar-title{
-  font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:16px;
-}
-.pilar-card h3{
-  font-family:var(--serif);font-size:28px;font-weight:300;
-  color:var(--white);line-height:1.2;margin-bottom:16px;
-}
+.pilar-card{background:rgba(30,22,4,.6);padding:48px 36px;border:1px solid rgba(200,180,154,.1);border-left:2px solid rgba(139,111,78,.6);backdrop-filter:blur(8px);transition:background .3s;}
+.pilar-card:hover{background:rgba(30,22,4,.8);}
+.pilar-num{font-family:var(--serif);font-size:40px;font-weight:300;color:rgba(184,151,90,.65);line-height:1;margin-bottom:16px;letter-spacing:-.01em;}
+.pilar-title{font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.pilar-card h3{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--white);line-height:1.2;margin-bottom:16px;}
 .pilar-card h3 em{font-style:italic;color:var(--cream);}
-.pilar-card p{
-  font-size:14px;font-weight:300;letter-spacing:.04em;
-  color:rgba(253,250,245,.45);line-height:1.85;
-}
+.pilar-card p{font-size:14px;font-weight:300;letter-spacing:.04em;color:rgba(253,250,245,.42);line-height:1.85;}
 .pilar-rule{width:28px;height:1px;background:rgba(184,151,90,.4);margin:20px 0;}
 
-/* VALLE SECTION */
-.valle-section{
-  display:grid;grid-template-columns:1fr 1fr;
-  min-height:70vh;
-}
-.valle-img{
-  position:relative;overflow:hidden;
-  background:var(--img3) center/cover no-repeat;
-  min-height:500px;
-}
-.valle-img::before{
-  content:'';position:absolute;inset:0;z-index:1;
-  background:rgba(60,59,34,.32);
-}
-.valle-img::after{
-  content:'';position:absolute;inset:0;z-index:2;
-  background:linear-gradient(to right,rgba(60,59,34,.1) 0%,var(--ink2) 100%);
-}
-.valle-text{
-  background:rgba(45,37,10,.9);
-  padding:clamp(48px,7vh,96px) clamp(32px,5vw,72px);
-  display:flex;flex-direction:column;justify-content:center;
-}
-.valle-text .eyebrow{margin-bottom:24px;}
-.valle-text h2{
-  font-family:var(--serif);font-size:clamp(32px,3.5vw,52px);font-weight:300;
-  color:var(--white);line-height:1.1;margin-bottom:20px;
-}
+/* bg wrapper for pilares */
+.pilares-bg{background:var(--ink2);}
+
+/* VALLE — mossy left, cream-tinted right */
+.valle-section{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;}
+.valle-img{position:relative;overflow:hidden;background:var(--img3) center/cover no-repeat;min-height:500px;}
+.valle-img::before{content:'';position:absolute;inset:0;z-index:1;background:rgba(42,48,22,.3);}
+.valle-img::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to right,rgba(42,48,22,.1) 0%,rgba(22,16,2,.72) 100%);}
+.valle-text{background:rgba(38,44,18,.92);padding:clamp(48px,7vh,96px) clamp(32px,5vw,72px);display:flex;flex-direction:column;justify-content:center;}
+.valle-text h2{font-family:var(--serif);font-size:clamp(32px,3.5vw,52px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:20px;}
 .valle-text h2 em{font-style:italic;color:var(--gold);}
-.valle-text p{
-  font-size:15px;font-weight:300;letter-spacing:.04em;
-  color:rgba(253,250,245,.5);line-height:1.9;margin-bottom:32px;max-width:440px;
-}
+.valle-text p{font-size:15px;font-weight:300;letter-spacing:.04em;color:rgba(253,250,245,.48);line-height:1.9;margin-bottom:32px;max-width:440px;}
 .check-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
-.check-list li{
-  display:flex;align-items:center;gap:12px;
-  font-size:13px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(253,250,245,.65);
-}
-.check-list li::before{
-  content:'✓';color:var(--gold);font-size:13px;flex-shrink:0;
-}
+.check-list li{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(253,250,245,.62);}
+.check-list li::before{content:'✓';color:var(--gold);font-size:13px;flex-shrink:0;}
 
 /* CTA STRIP */
-.cta-strip{
-  position:relative;overflow:hidden;
-  padding:clamp(64px,10vh,100px) clamp(24px,5vw,72px);
-  text-align:center;
-}
-.cta-strip-bg{
-  position:absolute;inset:0;
-  background:var(--img4) center/cover no-repeat;
-  filter:brightness(.28) saturate(.6);
-}
-.cta-strip-overlay{position:absolute;inset:0;background:rgba(60,59,34,.58);}
+.cta-strip{position:relative;overflow:hidden;padding:clamp(64px,10vh,100px) clamp(24px,5vw,72px);text-align:center;}
+.cta-strip-bg{position:absolute;inset:0;background:var(--img4) center/cover no-repeat;filter:brightness(.28) saturate(.6);}
+.cta-strip-overlay{position:absolute;inset:0;background:rgba(30,22,4,.62);}
 .cta-strip-content{position:relative;z-index:1;}
-.cta-strip h2{
-  font-family:var(--serif);font-size:clamp(32px,4vw,54px);font-weight:300;
-  color:var(--white);line-height:1.1;margin-bottom:16px;
-}
+.cta-strip h2{font-family:var(--serif);font-size:clamp(32px,4vw,54px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:16px;}
 .cta-strip h2 em{font-style:italic;color:var(--gold);}
-.cta-strip p{
-  font-size:13px;font-weight:300;letter-spacing:.06em;
-  color:rgba(253,250,245,.48);margin-bottom:36px;
-}
+.cta-strip p{font-size:13px;font-weight:300;letter-spacing:.06em;color:rgba(253,250,245,.45);margin-bottom:36px;}
 
-
-/* ═══════════════════════════════════════════
-   PAGE 2 — COMUNIDAD
-═══════════════════════════════════════════ */
-.page-hero{
-  position:relative;height:62vh;min-height:460px;overflow:hidden;
-}
-.page-hero-bg{
-  position:absolute;inset:-5%;
-  background-size:cover;background-position:center;
-  filter:brightness(.62) saturate(.85);
-}
-.page-hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,var(--ink) 0%,rgba(60,59,34,.05) 50%,transparent 100%);
-}
-.page-hero-content{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:clamp(32px,5vw,72px);max-width:900px;
-}
-.page-hero-content .eyebrow{margin-bottom:16px;}
-.page-hero-content h1{
-  font-family:var(--serif);font-size:clamp(38px,5vw,72px);font-weight:300;
-  color:var(--white);line-height:1.07;
-}
+/* ═══════════════════════════════════════
+   PAGE 2 — COMUNIDAD  (warm/cream palette)
+═══════════════════════════════════════ */
+.page-hero{position:relative;height:62vh;min-height:460px;overflow:hidden;}
+.page-hero-bg{position:absolute;inset:-5%;background-size:cover;background-position:center;filter:brightness(.58) saturate(.82);}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(22,16,2,.9) 0%,rgba(60,59,34,.06) 50%,transparent 100%);}
+.page-hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(32px,5vw,72px);max-width:900px;}
+.page-hero-content h1{font-family:var(--serif);font-size:clamp(38px,5vw,72px);font-weight:300;color:var(--white);line-height:1.07;}
 .page-hero-content h1 em{font-style:italic;color:var(--cream);}
 
-/* SEGURIDAD */
-.seg-section{
-  padding:clamp(64px,10vh,104px) clamp(24px,5vw,72px);
-  max-width:1200px;margin:0 auto;
-}
+/* SEGURIDAD — cream bg */
+.seg-section{padding:clamp(64px,10vh,104px) clamp(24px,5vw,72px);max-width:1200px;margin:0 auto;}
 .seg-header{margin-bottom:56px;}
-.seg-header h2{
-  font-family:var(--serif);font-size:clamp(32px,3.5vw,52px);font-weight:300;
-  color:var(--white);line-height:1.1;
-}
+.seg-header h2{font-family:var(--serif);font-size:clamp(32px,3.5vw,52px);font-weight:300;color:var(--white);line-height:1.1;}
 .seg-header h2 em{font-style:italic;color:var(--gold);}
-.seg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(184,151,90,.1);margin-bottom:64px;}
-.seg-item{
-  background:rgba(45,37,10,.55);padding:40px 36px;
-  border:1px solid rgba(200,180,154,.1);
-  border-left:2px solid rgba(139,111,78,.5);
-  backdrop-filter:blur(6px);
-  display:flex;gap:20px;align-items:flex-start;
-}
-.seg-icon{
-  font-size:18px;color:var(--gold);flex-shrink:0;
-  width:42px;height:42px;
-  border:1px solid rgba(184,151,90,.2);border-radius:2px;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(184,151,90,.06);
-}
-.seg-item-title{
-  font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:8px;
-}
-.seg-item p{
-  font-size:14px;font-weight:300;letter-spacing:.04em;
-  color:rgba(253,250,245,.45);line-height:1.8;
-}
+.seg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(184,151,90,.12);margin-bottom:64px;}
+.seg-item{background:rgba(245,240,232,.06);padding:40px 36px;border:1px solid rgba(200,180,154,.14);border-left:2px solid rgba(139,111,78,.5);backdrop-filter:blur(6px);display:flex;gap:20px;align-items:flex-start;transition:background .3s;}
+.seg-item:hover{background:rgba(245,240,232,.1);}
+.seg-icon{font-size:18px;color:var(--gold);flex-shrink:0;width:42px;height:42px;border:1px solid rgba(184,151,90,.2);border-radius:2px;display:flex;align-items:center;justify-content:center;background:rgba(184,151,90,.08);}
+.seg-item-title{font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.seg-item p{font-size:14px;font-weight:300;letter-spacing:.04em;color:rgba(253,250,245,.45);line-height:1.8;}
 
-/* ENTORNO */
-.entorno-section{
-  display:grid;grid-template-columns:1fr 1fr;
-}
-.entorno-img{
-  min-height:520px;
-  background:var(--img2) center/cover no-repeat;
-  position:relative;overflow:hidden;
-}
-.entorno-img::before{
-  content:'';position:absolute;inset:0;z-index:1;
-  background:rgba(60,59,34,.42);
-}
-.entorno-img::after{
-  content:'';position:absolute;inset:0;z-index:2;
-  background:linear-gradient(to left,rgba(60,59,34,.08) 0%,var(--ink2) 100%);
-}
-.entorno-text{
-  background:rgba(45,37,10,.9);
-  padding:clamp(48px,7vh,88px) clamp(32px,5vw,72px);
-  display:flex;flex-direction:column;justify-content:center;
-}
-.entorno-text h2{
-  font-family:var(--serif);font-size:clamp(30px,3.2vw,48px);font-weight:300;
-  color:var(--white);line-height:1.1;margin-bottom:18px;
-}
-.entorno-text h2 em{font-style:italic;color:var(--gold);}
-.entorno-text p{
-  font-size:14px;font-weight:300;letter-spacing:.04em;
-  color:rgba(253,250,245,.45);line-height:1.9;margin-bottom:28px;
-}
+/* COMUNIDAD bg — mossy warm */
+.comunidad-bg{background:rgba(38,44,18,.95);}
+
+/* ENTORNO — cream left panel */
+.entorno-section{display:grid;grid-template-columns:1fr 1fr;}
+.entorno-img{min-height:520px;background:var(--img2) center/cover no-repeat;position:relative;overflow:hidden;}
+.entorno-img::before{content:'';position:absolute;inset:0;z-index:1;background:rgba(60,59,34,.38);}
+.entorno-img::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to left,rgba(60,59,34,.06) 0%,rgba(22,16,2,.65) 100%);}
+.entorno-text{background:rgba(245,240,232,.96);padding:clamp(48px,7vh,88px) clamp(32px,5vw,72px);display:flex;flex-direction:column;justify-content:center;}
+.entorno-text .eyebrow{color:var(--earth);}
+.entorno-text .eyebrow::before{background:var(--earth);}
+.entorno-text h2{font-family:var(--serif);font-size:clamp(30px,3.2vw,48px);font-weight:300;color:var(--ink2);line-height:1.1;margin-bottom:18px;}
+.entorno-text h2 em{font-style:italic;color:var(--earth);}
+.entorno-text p{font-size:14px;font-weight:300;letter-spacing:.04em;color:rgba(45,37,10,.58);line-height:1.9;margin-bottom:28px;}
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;}
-.tag{
-  font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(253,250,245,.45);
-  border:1px solid rgba(184,151,90,.2);
-  padding:7px 14px;border-radius:2px;
-}
+.tag{font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(45,37,10,.5);border:1px solid rgba(139,111,78,.3);padding:7px 14px;border-radius:2px;}
 
-/* AMENIDADES */
-.amen-section{
-  padding:clamp(64px,10vh,104px) clamp(24px,5vw,72px);
-  max-width:1200px;margin:0 auto;
-}
+/* AMENIDADES — cream bg */
+.amen-section{padding:clamp(64px,10vh,104px) clamp(24px,5vw,72px);max-width:1200px;margin:0 auto;}
 .amen-header{text-align:center;margin-bottom:56px;}
-.amen-header h2{
-  font-family:var(--serif);font-size:clamp(30px,3.5vw,50px);font-weight:300;
-  color:var(--white);line-height:1.1;
-}
-.amen-header h2 em{font-style:italic;color:var(--gold);}
-.amen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,151,90,.1);}
-.amen-item{
-  background:rgba(45,37,10,.55);padding:36px 28px;
-  border-top:2px solid transparent;
-  backdrop-filter:blur(6px);
-  transition:border-color .3s,background .3s;
-}
-.amen-item:hover{border-color:var(--gold);background:rgba(45,37,10,.72);}
-.amen-num{
-  font-family:var(--serif);font-size:26px;font-weight:300;font-style:italic;
-  color:rgba(184,151,90,.72);margin-bottom:10px;
-}
-.amen-name{
-  font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--white);margin-bottom:10px;
-}
-.amen-desc{
-  font-size:13px;font-weight:300;letter-spacing:.04em;
-  color:rgba(253,250,245,.38);line-height:1.75;
-}
+.amen-header h2{font-family:var(--serif);font-size:clamp(30px,3.5vw,50px);font-weight:300;color:var(--ink2);line-height:1.1;}
+.amen-header h2 em{font-style:italic;color:var(--earth);}
+.amen-header .eyebrow{color:var(--earth);}
+.amen-header .eyebrow::before{background:var(--earth);}
+.amen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(139,111,78,.15);}
+.amen-item{background:rgba(245,240,232,.92);padding:36px 28px;border-top:2px solid transparent;backdrop-filter:blur(4px);transition:border-color .3s,background .3s;}
+.amen-item:hover{border-color:var(--earth);background:rgba(237,230,216,.98);}
+.amen-num{font-family:var(--serif);font-size:26px;font-weight:300;font-style:italic;color:rgba(139,111,78,.6);margin-bottom:10px;}
+.amen-name{font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);margin-bottom:10px;}
+.amen-desc{font-size:13px;font-weight:300;letter-spacing:.04em;color:rgba(45,37,10,.48);line-height:1.75;}
 
-/* ═══════════════════════════════════════════
-   PAGE 3 — MASTER PLAN
-═══════════════════════════════════════════ */
-.mp-hero{
-  position:relative;height:62vh;min-height:460px;overflow:hidden;
-}
-.mp-hero-bg{
-  position:absolute;inset:-5%;
-  background:var(--img4) center/cover no-repeat;
-  filter:brightness(.62) saturate(.85);
-}
-.mp-hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,var(--ink) 0%,rgba(60,59,34,.05) 50%,transparent 100%);
-}
-.mp-hero-content{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:clamp(32px,5vw,72px);
-}
-.mp-hero-content .eyebrow{margin-bottom:18px;}
-.mp-hero-content h1{
-  font-family:var(--serif);font-size:clamp(38px,5vw,68px);font-weight:300;
-  color:var(--white);line-height:1.07;max-width:700px;
-}
+/* ═══════════════════════════════════════
+   PAGE 3 — MASTER PLAN  (dark green)
+═══════════════════════════════════════ */
+.mp-hero-bg{position:absolute;inset:-5%;background:var(--img4) center/cover no-repeat;filter:brightness(.58) saturate(.82);}
+.mp-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(22,16,2,.92) 0%,rgba(42,48,22,.06) 50%,transparent 100%);}
+.mp-hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(32px,5vw,72px);}
+.mp-hero-content h1{font-family:var(--serif);font-size:clamp(38px,5vw,68px);font-weight:300;color:var(--white);line-height:1.07;max-width:700px;}
 .mp-hero-content h1 em{font-style:italic;color:var(--cream);}
 
-/* LOTES SECTION */
-.lotes-section{
-  padding:clamp(64px,10vh,104px) clamp(24px,5vw,72px);
-  max-width:1200px;margin:0 auto;
-}
+.lotes-section{padding:clamp(64px,10vh,104px) clamp(24px,5vw,72px);max-width:1200px;margin:0 auto;}
 .lotes-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;gap:32px;flex-wrap:wrap;}
-.lotes-header h2{
-  font-family:var(--serif);font-size:clamp(30px,3.5vw,50px);font-weight:300;
-  color:var(--white);line-height:1.1;
-}
+.lotes-header h2{font-family:var(--serif);font-size:clamp(30px,3.5vw,50px);font-weight:300;color:var(--white);line-height:1.1;}
 .lotes-header h2 em{font-style:italic;color:var(--gold);}
-.lotes-header p{
-  font-size:14px;font-weight:300;letter-spacing:.04em;
-  color:rgba(253,250,245,.42);line-height:1.8;max-width:400px;text-align:right;
-}
-.lotes-specs{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-  background:rgba(184,151,90,.1);margin-bottom:1px;
-}
-.spec-card{
-  background:rgba(45,37,10,.55);padding:44px 36px;
-  border:1px solid rgba(200,180,154,.1);
-  backdrop-filter:blur(8px);
-  position:relative;overflow:hidden;
-}
-.spec-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(to right,transparent,rgba(184,151,90,.5),transparent);
-}
-.spec-big{
-  font-family:var(--serif);font-size:clamp(48px,5vw,72px);font-weight:300;
-  color:var(--white);line-height:1;margin-bottom:8px;letter-spacing:-.02em;
-}
+.lotes-header p{font-size:14px;font-weight:300;letter-spacing:.04em;color:rgba(253,250,245,.38);line-height:1.8;max-width:400px;text-align:right;}
+.lotes-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,151,90,.1);margin-bottom:1px;}
+.spec-card{background:rgba(30,22,4,.65);padding:44px 36px;border:1px solid rgba(200,180,154,.1);backdrop-filter:blur(8px);position:relative;overflow:hidden;}
+.spec-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,rgba(184,151,90,.45),transparent);}
+.spec-big{font-family:var(--serif);font-size:clamp(48px,5vw,72px);font-weight:300;color:var(--white);line-height:1;margin-bottom:8px;letter-spacing:-.02em;}
 .spec-big em{font-style:italic;color:var(--gold);}
-.spec-label{
-  font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;
-  color:rgba(253,250,245,.35);margin-bottom:14px;
-}
-.spec-desc{
-  font-size:13px;font-weight:300;letter-spacing:.04em;
-  color:rgba(253,250,245,.42);line-height:1.75;
-}
+.spec-label{font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:rgba(253,250,245,.32);margin-bottom:14px;}
+.spec-desc{font-size:13px;font-weight:300;letter-spacing:.04em;color:rgba(253,250,245,.4);line-height:1.75;}
 
-/* PLANO AÉREO */
-.plano-section{
-  position:relative;overflow:hidden;
-  min-height:520px;
-  background:var(--img1) center/cover no-repeat;
-}
-.plano-overlay{
-  position:absolute;inset:0;
-  background:rgba(60,59,34,.52);
-  backdrop-filter:blur(1px);
-}
-.plano-content{
-  position:relative;z-index:1;
-  padding:clamp(48px,8vh,88px) clamp(24px,5vw,72px);
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-}
-.plano-content h2{
-  font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);font-weight:300;
-  color:var(--white);line-height:1.1;margin-bottom:16px;
-}
+.masterplan-bg{background:var(--ink2);}
+
+/* PLANO */
+.plano-section{position:relative;overflow:hidden;min-height:520px;background:var(--img1) center/cover no-repeat;}
+.plano-overlay{position:absolute;inset:0;background:rgba(30,22,4,.55);backdrop-filter:blur(1px);}
+.plano-content{position:relative;z-index:1;padding:clamp(48px,8vh,88px) clamp(24px,5vw,72px);display:flex;flex-direction:column;align-items:center;text-align:center;}
+.plano-content h2{font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:16px;}
 .plano-content h2 em{font-style:italic;color:var(--gold);}
-.plano-content p{
-  font-size:13px;font-weight:300;letter-spacing:.05em;
-  color:rgba(253,250,245,.48);margin-bottom:36px;max-width:520px;
-}
+.plano-content p{font-size:13px;font-weight:300;letter-spacing:.05em;color:rgba(253,250,245,.45);margin-bottom:36px;max-width:520px;}
 
-/* CERTEZA */
-.certeza-section{
-  padding:clamp(64px,10vh,104px) clamp(24px,5vw,72px);
-  max-width:1200px;margin:0 auto;
-}
+/* CERTEZA — mossy */
+.certeza-section{padding:clamp(64px,10vh,104px) clamp(24px,5vw,72px);max-width:1200px;margin:0 auto;}
 .certeza-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-.certeza-text h2{
-  font-family:var(--serif);font-size:clamp(30px,3.5vw,48px);font-weight:300;
-  color:var(--white);line-height:1.1;margin-bottom:20px;
-}
+.certeza-text h2{font-family:var(--serif);font-size:clamp(30px,3.5vw,48px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:20px;}
 .certeza-text h2 em{font-style:italic;color:var(--gold);}
-.certeza-text p{
-  font-size:13px;font-weight:300;letter-spacing:.04em;
-  color:rgba(253,250,245,.45);line-height:1.9;margin-bottom:28px;
-}
+.certeza-text p{font-size:13px;font-weight:300;letter-spacing:.04em;color:rgba(253,250,245,.42);line-height:1.9;margin-bottom:28px;}
 .certeza-items{display:flex;flex-direction:column;gap:16px;}
-.certeza-item{
-  display:grid;grid-template-columns:48px 1fr;gap:16px;
-  padding:20px 24px;
-  background:rgba(45,37,10,.45);
-  border:1px solid rgba(200,180,154,.12);
-  border-left:2px solid rgba(139,111,78,.55);
-  border-radius:2px;
-  backdrop-filter:blur(6px);
-  align-items:start;
-}
-.certeza-num{
-  font-family:var(--serif);font-size:24px;font-weight:300;font-style:italic;
-  color:rgba(184,151,90,.45);line-height:1;
-}
-.certeza-item-title{
-  font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:5px;
-}
-.certeza-item p{
-  font-size:13px;font-weight:300;color:rgba(253,250,245,.42);line-height:1.7;margin:0;
-  border:none;padding:0;
-}
+.certeza-item{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:20px 24px;background:rgba(30,22,4,.55);border:1px solid rgba(200,180,154,.1);border-left:2px solid rgba(139,111,78,.5);border-radius:2px;backdrop-filter:blur(6px);align-items:start;}
+.certeza-num{font-family:var(--serif);font-size:24px;font-weight:300;font-style:italic;color:rgba(184,151,90,.4);line-height:1;}
+.certeza-item-title{font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.certeza-item p{font-size:13px;font-weight:300;color:rgba(253,250,245,.38);line-height:1.7;margin:0;border:none;padding:0;}
 
-/* ═══════════════════════════════════════════
+.certeza-bg{background:rgba(38,44,18,.95);}
+
+/* ═══════════════════════════════════════
    PAGE 4 — CONTACTO
-═══════════════════════════════════════════ */
-.contacto-wrap{
-  min-height:calc(100vh - 80px);
-  display:grid;grid-template-columns:1fr 1fr;
-}
-.contacto-left{
-  position:relative;overflow:hidden;
-  background:var(--ink2);
-}
-.contacto-left-bg{
-  position:absolute;inset:0;
-  background:var(--img4) center/cover no-repeat;
-  filter:brightness(.38) saturate(.65);
-}
-.contacto-left-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to right,rgba(60,59,34,.85) 0%,rgba(60,59,34,.45) 100%);
-}
-.contacto-left-content{
-  position:relative;z-index:1;
-  padding:clamp(48px,8vh,96px) clamp(32px,5vw,64px);
-  display:flex;flex-direction:column;justify-content:space-between;
-  height:100%;min-height:600px;
-}
-.contacto-left-content .eyebrow{margin-bottom:24px;}
-.contacto-left-content h1{
-  font-family:var(--serif);font-size:clamp(36px,4vw,58px);font-weight:300;
-  color:var(--white);line-height:1.1;margin-bottom:20px;
-}
+═══════════════════════════════════════ */
+.contacto-wrap{min-height:calc(100vh - 112px);display:grid;grid-template-columns:1fr 1fr;}
+.contacto-left{position:relative;overflow:hidden;background:var(--ink2);}
+.contacto-left-bg{position:absolute;inset:0;background:var(--img4) center/cover no-repeat;filter:brightness(.35) saturate(.62);}
+.contacto-left-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(22,16,2,.88) 0%,rgba(42,48,22,.42) 100%);}
+.contacto-left-content{position:relative;z-index:1;padding:clamp(48px,8vh,96px) clamp(32px,5vw,64px);display:flex;flex-direction:column;justify-content:space-between;height:100%;min-height:600px;}
+.contacto-left-content h1{font-family:var(--serif);font-size:clamp(36px,4vw,58px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:20px;}
 .contacto-left-content h1 em{font-style:italic;color:var(--cream);}
-.contacto-left-content p{
-  font-size:14px;font-weight:300;letter-spacing:.04em;
-  color:rgba(253,250,245,.5);line-height:1.85;margin-bottom:40px;max-width:420px;
-}
+.contacto-left-content p{font-size:14px;font-weight:300;letter-spacing:.04em;color:rgba(253,250,245,.46);line-height:1.85;margin-bottom:40px;max-width:420px;}
 .contacto-data{display:flex;flex-direction:column;gap:20px;}
 .contacto-data-item{display:flex;flex-direction:column;gap:4px;}
 .contacto-data-item span{font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);}
-.contacto-data-item p{font-size:14px;font-weight:300;color:rgba(253,250,245,.55);line-height:1.6;margin:0;}
+.contacto-data-item p{font-size:14px;font-weight:300;color:rgba(253,250,245,.48);line-height:1.6;margin:0;}
 
-.contacto-right{
-  padding:clamp(48px,8vh,88px) clamp(32px,5vw,64px);
-  background:rgba(60,59,34,.95);
-  display:flex;flex-direction:column;justify-content:center;
-}
-.form-title{
-  font-family:var(--serif);font-size:28px;font-weight:300;
-  color:var(--white);margin-bottom:6px;
-}
-.form-title em{font-style:italic;color:var(--gold);}
-.form-sub{
-  font-size:12px;font-weight:300;letter-spacing:.1em;
-  color:rgba(253,250,245,.35);margin-bottom:36px;
-}
-
+/* Contacto right — cream */
+.contacto-right{padding:clamp(48px,8vh,88px) clamp(32px,5vw,64px);background:var(--cream);display:flex;flex-direction:column;justify-content:center;}
+.form-title{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--ink2);margin-bottom:6px;}
+.form-title em{font-style:italic;color:var(--earth);}
+.form-sub{font-size:12px;font-weight:300;letter-spacing:.1em;color:rgba(45,37,10,.38);margin-bottom:36px;}
 .fgroup{margin-bottom:18px;}
-.fgroup label{
-  display:block;font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;
-  color:rgba(253,250,245,.38);margin-bottom:6px;
-}
+.fgroup label{display:block;font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(45,37,10,.45);margin-bottom:6px;}
 .fgroup label .req{color:#C8614A;margin-left:2px;}
-.fgroup input,.fgroup select,.fgroup textarea{
-  width:100%;background:rgba(253,250,245,.06);
-  border:1px solid rgba(184,151,90,.15);border-radius:2px;
-  padding:12px 14px;font-family:var(--sans);
-  font-size:13px;font-weight:300;color:var(--white);
-  outline:none;transition:border-color .2s,background .2s;
-  -webkit-appearance:none;
-}
-.fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{
-  border-color:var(--gold);background:rgba(253,250,245,.09);
-}
-.fgroup input::placeholder,.fgroup textarea::placeholder{color:rgba(253,250,245,.42);}
+.fgroup input,.fgroup select,.fgroup textarea{width:100%;background:rgba(45,37,10,.06);border:1px solid rgba(92,74,50,.2);border-radius:2px;padding:12px 14px;font-family:var(--sans);font-size:13px;font-weight:300;color:var(--ink2);outline:none;transition:border-color .2s,background .2s;-webkit-appearance:none;}
+.fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{border-color:var(--earth);background:rgba(45,37,10,.08);}
+.fgroup input::placeholder,.fgroup textarea::placeholder{color:rgba(45,37,10,.32);}
 .fgroup select option{color:#1a1208;background:#e8dcc8;}
 .fgroup textarea{resize:vertical;min-height:100px;line-height:1.6;}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .field-error{font-size:12px;color:#C8614A;margin-top:4px;display:none;}
 .field-error.visible{display:block;}
 .fgroup input.error,.fgroup select.error{border-color:#C8614A;}
-
-.form-btn{
-  width:100%;padding:15px;margin-top:8px;
-  background:var(--deep);border:none;border-radius:2px;
-  color:var(--white);font-family:var(--sans);
-  font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;
-  cursor:pointer;transition:background .2s;
-}
+.form-btn{width:100%;padding:15px;margin-top:8px;background:var(--deep);border:none;border-radius:2px;color:var(--white);font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
 .form-btn:hover{background:var(--earth);}
 .form-btn:disabled{opacity:.55;cursor:not-allowed;}
-.form-note{
-  font-size:12px;font-weight:300;letter-spacing:.06em;
-  color:rgba(253,250,245,.55);text-align:center;margin-top:12px;
-}
+.form-note{font-size:12px;font-weight:300;letter-spacing:.06em;color:rgba(45,37,10,.4);text-align:center;margin-top:12px;}
 
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════ */
+/* ═══ RESPONSIVE ═══ */
 @media(max-width:1024px){
   .valle-section,.entorno-section{grid-template-columns:1fr;}
   .entorno-img,.valle-img{min-height:340px;}
@@ -713,14 +314,12 @@ footer{
   .pilares-grid,.lotes-specs,.amen-grid,.seg-grid{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr;}
 }
-@media(max-width:560px){
-  .frow{grid-template-columns:1fr;}
-}
+@media(max-width:560px){.frow{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
+<!-- NAV -->
 <nav id="nav">
   <div class="nav-logo" onclick="goTo('inicio')" style="cursor:pointer;">
     <img src="https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/699e7be15dfd50f729069032.png" alt="Terragona">
@@ -737,21 +336,16 @@ footer{
   </div>
 </nav>
 
-<!-- ═══ MOBILE MENU ═══ -->
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-close" onclick="toggleMobile()">✕ cerrar</div>
-  <a href="#" onclick="goTo('inicio');toggleMobile();return false;" data-page="inicio">Inicio</a>
-  <a href="#" onclick="goTo('comunidad');toggleMobile();return false;" data-page="comunidad">Comunidad</a>
-  <a href="#" onclick="goTo('masterplan');toggleMobile();return false;" data-page="masterplan">Master Plan</a>
-  <a href="#" onclick="goTo('contacto');toggleMobile();return false;" data-page="contacto">Contacto</a>
+  <a href="#" onclick="goTo('inicio');toggleMobile();return false;">Inicio</a>
+  <a href="#" onclick="goTo('comunidad');toggleMobile();return false;">Comunidad</a>
+  <a href="#" onclick="goTo('masterplan');toggleMobile();return false;">Master Plan</a>
+  <a href="#" onclick="goTo('contacto');toggleMobile();return false;">Contacto</a>
 </div>
 
-<!-- ════════════════════════════════════════
-     PAGE: INICIO
-════════════════════════════════════════ -->
+<!-- ════ INICIO ════ -->
 <div class="page active" id="page-inicio">
-
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
@@ -766,30 +360,18 @@ footer{
     </div>
   </section>
 
-  <!-- STATS -->
+  <!-- STATS — mossy -->
   <div class="stats-bar">
     <div class="stats-inner">
-      <div class="stat">
-        <div class="stat-num">900 <em>m²</em></div>
-        <div class="stat-lbl">Superficie desde</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">8 <em>min</em></div>
-        <div class="stat-lbl">Del centro histórico</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num"><em>100%</em></div>
-        <div class="stat-lbl">Certeza jurídica</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">Parras</div>
-        <div class="stat-lbl">Coahuila · México</div>
-      </div>
+      <div class="stat"><div class="stat-num">900 <em>m²</em></div><div class="stat-lbl">Superficie desde</div></div>
+      <div class="stat"><div class="stat-num">8 <em>min</em></div><div class="stat-lbl">Del centro histórico</div></div>
+      <div class="stat"><div class="stat-num"><em>100%</em></div><div class="stat-lbl">Certeza jurídica</div></div>
+      <div class="stat"><div class="stat-num">Parras</div><div class="stat-lbl">Coahuila · México</div></div>
     </div>
   </div>
 
-  <!-- PILARES -->
-  <section style="background:var(--ink);">
+  <!-- PILARES — dark green -->
+  <section class="pilares-bg">
     <div class="pilares-section">
       <div class="pilares-header">
         <p class="eyebrow" style="justify-content:center;display:flex;align-items:center;">Tres razones</p>
@@ -797,31 +379,25 @@ footer{
       </div>
       <div class="pilares-grid">
         <div class="pilar-card">
-          <div class="pilar-num">01</div>
-          <div class="pilar-title">Inversión</div>
-          <h3>Patrimonio<br>con <em>plusvalía real.</em></h3>
-          <div class="pilar-rule"></div>
+          <div class="pilar-num">01</div><div class="pilar-title">Inversión</div>
+          <h3>Patrimonio<br>con <em>plusvalía real.</em></h3><div class="pilar-rule"></div>
           <p>Lotes urbanizados con título de propiedad a tu nombre. Precio de lanzamiento en una zona con crecimiento de valor comprobable.</p>
         </div>
         <div class="pilar-card">
-          <div class="pilar-num">02</div>
-          <div class="pilar-title">Seguridad</div>
-          <h3>Privada diseñada<br>para <em>proteger.</em></h3>
-          <div class="pilar-rule"></div>
+          <div class="pilar-num">02</div><div class="pilar-title">Seguridad</div>
+          <h3>Privada diseñada<br>para <em>proteger.</em></h3><div class="pilar-rule"></div>
           <p>Bardeo perimetral, acceso controlado, videovigilancia permanente. Certeza jurídica integral en cada etapa de tu adquisición.</p>
         </div>
         <div class="pilar-card">
-          <div class="pilar-num">03</div>
-          <div class="pilar-title">El Lugar</div>
-          <h3>Valle privado<br>en <em>Parras.</em></h3>
-          <div class="pilar-rule"></div>
+          <div class="pilar-num">03</div><div class="pilar-title">El Lugar</div>
+          <h3>Valle privado<br>en <em>Parras.</em></h3><div class="pilar-rule"></div>
           <p>Rodeado de montañas y nogales centenarios. A 8 minutos del centro histórico de Parras de la Fuente, Coahuila.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VALLE -->
+  <!-- VALLE — mossy -->
   <section class="valle-section">
     <div class="valle-img" style="background-image:var(--img4);"></div>
     <div class="valle-text">
@@ -840,8 +416,7 @@ footer{
 
   <!-- CTA -->
   <section class="cta-strip">
-    <div class="cta-strip-bg"></div>
-    <div class="cta-strip-overlay"></div>
+    <div class="cta-strip-bg"></div><div class="cta-strip-overlay"></div>
     <div class="cta-strip-content">
       <p class="eyebrow" style="justify-content:center;display:flex;align-items:center;margin-bottom:24px;">Precio de lanzamiento</p>
       <h2>Tu lote en Terragona<br><em>te espera.</em></h2>
@@ -849,15 +424,11 @@ footer{
       <button class="btn-primary" onclick="goTo('contacto')">Solicitar información →</button>
     </div>
   </section>
-
   FOOTER_PLACEHOLDER
 </div>
 
-<!-- ════════════════════════════════════════
-     PAGE: COMUNIDAD
-════════════════════════════════════════ -->
+<!-- ════ COMUNIDAD ════ -->
 <div class="page" id="page-comunidad">
-
   <div class="page-hero">
     <div class="page-hero-bg" style="background-image:var(--img2);"></div>
     <div class="page-hero-overlay"></div>
@@ -867,149 +438,78 @@ footer{
     </div>
   </div>
 
-  <!-- SEGURIDAD -->
-  <section style="background:var(--ink);">
+  <!-- SEGURIDAD — mossy -->
+  <section class="comunidad-bg">
     <div class="seg-section">
       <div class="seg-header">
         <p class="eyebrow">Seguridad integral</p>
         <h2>Diseñada para<br><em>proteger lo que importa.</em></h2>
       </div>
       <div class="seg-grid">
-        <div class="seg-item">
-          <div class="seg-icon">⬡</div>
-          <div>
-            <div class="seg-item-title">In sitio</div>
-            <p>Bardeo perimetral de altura, acceso único controlado y videovigilancia permanente las 24 horas. Diseño de privada que prioriza la seguridad física de tu familia.</p>
-          </div>
-        </div>
-        <div class="seg-item">
-          <div class="seg-icon">◈</div>
-          <div>
-            <div class="seg-item-title">Jurídica</div>
-            <p>Título de propiedad a tu nombre. Certeza legal integral en cada etapa: desde el contrato hasta la entrega de tu lote. Respaldo jurídico total.</p>
-          </div>
-        </div>
-        <div class="seg-item">
-          <div class="seg-icon">◎</div>
-          <div>
-            <div class="seg-item-title">Plusvalía</div>
-            <p>Inversión patrimonial en tierra con valor real y creciente. Parras de la Fuente es una de las zonas de mayor proyección turística y residencial de Coahuila.</p>
-          </div>
-        </div>
-        <div class="seg-item">
-          <div class="seg-icon">◇</div>
-          <div>
-            <div class="seg-item-title">Acceso controlado</div>
-            <p>Caseta de acceso con registro y control de visitantes. Solo residentes y sus invitados registrados pueden ingresar al desarrollo.</p>
-          </div>
-        </div>
+        <div class="seg-item"><div class="seg-icon">⬡</div><div><div class="seg-item-title">In sitio</div><p>Bardeo perimetral de altura, acceso único controlado y videovigilancia permanente las 24 horas.</p></div></div>
+        <div class="seg-item"><div class="seg-icon">◈</div><div><div class="seg-item-title">Jurídica</div><p>Título de propiedad a tu nombre. Certeza legal integral en cada etapa: desde el contrato hasta la entrega.</p></div></div>
+        <div class="seg-item"><div class="seg-icon">◎</div><div><div class="seg-item-title">Plusvalía</div><p>Inversión patrimonial en tierra con valor real y creciente. Parras: zona de alta proyección en Coahuila.</p></div></div>
+        <div class="seg-item"><div class="seg-icon">◇</div><div><div class="seg-item-title">Acceso controlado</div><p>Caseta de acceso con registro y control de visitantes. Solo residentes y sus invitados pueden ingresar.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ENTORNO -->
+  <!-- ENTORNO — cream right panel -->
   <section class="entorno-section">
     <div class="entorno-text">
-      <p class="eyebrow">Entorno natural</p>
+      <p class="eyebrow dark">Entorno natural</p>
       <h2>Montañas, nogales<br>y <em>tranquilidad.</em></h2>
-      <p>El Barreal del Ojo de Agua es un valle singular en el corazón de Coahuila. Terragona aprovecha este paisaje único para crear un desarrollo que integra la naturaleza con la vida privada y la calidad de construcción.</p>
-      <p>La Sierra de Parras enmarca cada lote. Los nogales centenarios dan sombra y carácter al lugar. El clima seco y soleado de Parras hace de este entorno un lugar excepcional para vivir o invertir.</p>
+      <p>El Barreal del Ojo de Agua es un valle singular en el corazón de Coahuila. Terragona aprovecha este paisaje único para crear un desarrollo que integra la naturaleza con la vida privada.</p>
+      <p>La Sierra de Parras enmarca cada lote. Los nogales centenarios dan sombra y carácter al lugar.</p>
       <div class="tag-row">
-        <span class="tag">Sierra de Parras</span>
-        <span class="tag">Nogales centenarios</span>
-        <span class="tag">Clima seco</span>
-        <span class="tag">Paisaje único</span>
-        <span class="tag">Entorno privado</span>
+        <span class="tag">Sierra de Parras</span><span class="tag">Nogales centenarios</span>
+        <span class="tag">Clima seco</span><span class="tag">Paisaje único</span><span class="tag">Entorno privado</span>
       </div>
     </div>
     <div class="entorno-img" style="background-image:var(--img3);"></div>
   </section>
 
-  <!-- AMENIDADES -->
-  <section style="background:var(--ink);">
+  <!-- AMENIDADES — cream bg -->
+  <section style="background:var(--cream2);">
     <div class="amen-section">
       <div class="amen-header">
-        <p class="eyebrow" style="justify-content:center;display:flex;align-items:center;">Desarrollo</p>
+        <p class="eyebrow dark" style="justify-content:center;display:flex;align-items:center;">Desarrollo</p>
         <h2>Un entorno diseñado<br>para <em>vivir bien.</em></h2>
       </div>
       <div class="amen-grid">
-        <div class="amen-item">
-          <div class="amen-num">01</div>
-          <div class="amen-name">Vialidades pavimentadas</div>
-          <div class="amen-desc">Accesos internos pavimentados con diseño vial pensado para el confort de los residentes.</div>
-        </div>
-        <div class="amen-item">
-          <div class="amen-num">02</div>
-          <div class="amen-name">Servicios urbanizados</div>
-          <div class="amen-desc">Cada lote cuenta con acceso a servicios: agua, electricidad y drenaje disponibles.</div>
-        </div>
-        <div class="amen-item">
-          <div class="amen-num">03</div>
-          <div class="amen-name">Áreas verdes</div>
-          <div class="amen-desc">Espacios de convivencia y áreas verdes integradas al diseño del desarrollo.</div>
-        </div>
-        <div class="amen-item">
-          <div class="amen-num">04</div>
-          <div class="amen-name">Alumbrado público</div>
-          <div class="amen-desc">Iluminación en vialidades y accesos para garantizar seguridad nocturna.</div>
-        </div>
-        <div class="amen-item">
-          <div class="amen-num">05</div>
-          <div class="amen-name">Acceso controlado</div>
-          <div class="amen-desc">Caseta de vigilancia y acceso único con registro de visitantes 24 horas.</div>
-        </div>
-        <div class="amen-item">
-          <div class="amen-num">06</div>
-          <div class="amen-name">Bardeo perimetral</div>
-          <div class="amen-desc">Barda perimetral de altura que delimita y protege todo el desarrollo de forma integral.</div>
-        </div>
+        <div class="amen-item"><div class="amen-num">01</div><div class="amen-name">Vialidades pavimentadas</div><div class="amen-desc">Accesos internos pavimentados con diseño vial pensado para el confort de los residentes.</div></div>
+        <div class="amen-item"><div class="amen-num">02</div><div class="amen-name">Servicios urbanizados</div><div class="amen-desc">Cada lote cuenta con acceso a servicios: agua, electricidad y drenaje disponibles.</div></div>
+        <div class="amen-item"><div class="amen-num">03</div><div class="amen-name">Áreas verdes</div><div class="amen-desc">Espacios de convivencia y áreas verdes integradas al diseño del desarrollo.</div></div>
+        <div class="amen-item"><div class="amen-num">04</div><div class="amen-name">Alumbrado público</div><div class="amen-desc">Iluminación en vialidades y accesos para garantizar seguridad nocturna.</div></div>
+        <div class="amen-item"><div class="amen-num">05</div><div class="amen-name">Acceso controlado</div><div class="amen-desc">Caseta de vigilancia y acceso único con registro de visitantes 24 horas.</div></div>
+        <div class="amen-item"><div class="amen-num">06</div><div class="amen-name">Bardeo perimetral</div><div class="amen-desc">Barda perimetral de altura que delimita y protege todo el desarrollo de forma integral.</div></div>
       </div>
     </div>
   </section>
-
   FOOTER_PLACEHOLDER
 </div>
 
-<!-- ════════════════════════════════════════
-     PAGE: MASTER PLAN
-════════════════════════════════════════ -->
+<!-- ════ MASTER PLAN ════ -->
 <div class="page" id="page-masterplan">
-
-  <div class="mp-hero">
-    <div class="mp-hero-bg"></div>
-    <div class="mp-hero-overlay"></div>
+  <div class="mp-hero" style="position:relative;height:62vh;min-height:460px;overflow:hidden;">
+    <div class="mp-hero-bg"></div><div class="mp-hero-overlay"></div>
     <div class="mp-hero-content">
       <p class="eyebrow">Master Plan</p>
       <h1>Lotes desde 900 m²<br><em>en Parras de la Fuente.</em></h1>
     </div>
   </div>
 
-  <!-- SPECS -->
-  <section style="background:var(--ink);">
+  <!-- SPECS — dark green -->
+  <section class="masterplan-bg">
     <div class="lotes-section">
       <div class="lotes-header">
-        <div>
-          <p class="eyebrow">Características</p>
-          <h2>Tu lote en<br><em>Terragona.</em></h2>
-        </div>
+        <div><p class="eyebrow">Características</p><h2>Tu lote en<br><em>Terragona.</em></h2></div>
         <p>Cada lote ha sido diseñado para ofrecer la mayor privacidad y el mejor aprovechamiento del entorno natural de Parras de la Fuente.</p>
       </div>
       <div class="lotes-specs">
-        <div class="spec-card">
-          <div class="spec-big">900 <em>m²</em></div>
-          <div class="spec-label">Superficie desde</div>
-          <div class="spec-desc">Lotes de gran superficie que permiten proyectar residencias amplias en armonía con el paisaje.</div>
-        </div>
-        <div class="spec-card">
-          <div class="spec-big"><em>100%</em></div>
-          <div class="spec-label">Urbanizado</div>
-          <div class="spec-desc">Vialidades, servicios, alumbrado y bardeo ya ejecutados. Tu lote está listo para construir.</div>
-        </div>
-        <div class="spec-card">
-          <div class="spec-big">8 <em>min</em></div>
-          <div class="spec-label">Del centro de Parras</div>
-          <div class="spec-desc">Privacidad y naturaleza a pocos minutos del centro histórico, restaurantes y servicios de Parras.</div>
-        </div>
+        <div class="spec-card"><div class="spec-big">900 <em>m²</em></div><div class="spec-label">Superficie desde</div><div class="spec-desc">Lotes de gran superficie que permiten proyectar residencias amplias en armonía con el paisaje.</div></div>
+        <div class="spec-card"><div class="spec-big"><em>100%</em></div><div class="spec-label">Urbanizado</div><div class="spec-desc">Vialidades, servicios, alumbrado y bardeo ya ejecutados. Tu lote está listo para construir.</div></div>
+        <div class="spec-card"><div class="spec-big">8 <em>min</em></div><div class="spec-label">Del centro de Parras</div><div class="spec-desc">Privacidad y naturaleza a pocos minutos del centro histórico, restaurantes y servicios de Parras.</div></div>
       </div>
     </div>
   </section>
@@ -1020,13 +520,13 @@ footer{
     <div class="plano-content">
       <p class="eyebrow" style="justify-content:center;display:flex;align-items:center;margin-bottom:20px;">Vista aérea</p>
       <h2>Barreal del<br><em>Ojo de Agua.</em></h2>
-      <p>El desarrollo se ubica en uno de los valles más singulares de Coahuila, rodeado de la Sierra de Parras y a pocos minutos del centro histórico de la ciudad.</p>
+      <p>El desarrollo se ubica en uno de los valles más singulares de Coahuila, rodeado de la Sierra de Parras y a pocos minutos del centro histórico.</p>
       <button class="btn-primary" onclick="goTo('contacto')">Solicitar planos →</button>
     </div>
   </section>
 
-  <!-- CERTEZA -->
-  <section style="background:var(--ink);">
+  <!-- CERTEZA — mossy -->
+  <section class="certeza-bg">
     <div class="certeza-section">
       <div class="certeza-grid">
         <div class="certeza-text">
@@ -1034,55 +534,25 @@ footer{
           <h2>Con fundamento<br>y <em>certeza absoluta.</em></h2>
           <p>Cada etapa de tu adquisición cuenta con respaldo legal, notarial y jurídico. Título de propiedad a tu nombre desde el primer día.</p>
           <div class="gold-rule"></div>
-          <p>En Terragona no hay sorpresas. Todo el proceso está documentado, transparente y respaldado por un equipo legal especializado en desarrollo inmobiliario.</p>
+          <p>En Terragona no hay sorpresas. Todo el proceso está documentado, transparente y respaldado por un equipo legal especializado.</p>
         </div>
         <div class="certeza-items">
-          <div class="certeza-item">
-            <div class="certeza-num">01</div>
-            <div>
-              <div class="certeza-item-title">Título de propiedad</div>
-              <p>A tu nombre desde la firma. Sin intermediarios, sin riesgos.</p>
-            </div>
-          </div>
-          <div class="certeza-item">
-            <div class="certeza-num">02</div>
-            <div>
-              <div class="certeza-item-title">Contrato notarial</div>
-              <p>Cada operación se formaliza ante notario con plenas garantías legales.</p>
-            </div>
-          </div>
-          <div class="certeza-item">
-            <div class="certeza-num">03</div>
-            <div>
-              <div class="certeza-item-title">Uso de suelo</div>
-              <p>Uso de suelo residencial autorizado. Sin restricciones ocultas.</p>
-            </div>
-          </div>
-          <div class="certeza-item">
-            <div class="certeza-num">04</div>
-            <div>
-              <div class="certeza-item-title">Plusvalía comprobable</div>
-              <p>Zona de alta proyección en Coahuila. Inversión con valor real y creciente.</p>
-            </div>
-          </div>
+          <div class="certeza-item"><div class="certeza-num">01</div><div><div class="certeza-item-title">Título de propiedad</div><p>A tu nombre desde la firma. Sin intermediarios, sin riesgos.</p></div></div>
+          <div class="certeza-item"><div class="certeza-num">02</div><div><div class="certeza-item-title">Contrato notarial</div><p>Cada operación se formaliza ante notario con plenas garantías legales.</p></div></div>
+          <div class="certeza-item"><div class="certeza-num">03</div><div><div class="certeza-item-title">Uso de suelo</div><p>Uso de suelo residencial autorizado. Sin restricciones ocultas.</p></div></div>
+          <div class="certeza-item"><div class="certeza-num">04</div><div><div class="certeza-item-title">Plusvalía comprobable</div><p>Zona de alta proyección en Coahuila. Inversión con valor real y creciente.</p></div></div>
         </div>
       </div>
     </div>
   </section>
-
   FOOTER_PLACEHOLDER
 </div>
 
-<!-- ════════════════════════════════════════
-     PAGE: CONTACTO
-════════════════════════════════════════ -->
+<!-- ════ CONTACTO ════ -->
 <div class="page" id="page-contacto">
-
   <div class="contacto-wrap">
-    <!-- LEFT -->
     <div class="contacto-left">
-      <div class="contacto-left-bg"></div>
-      <div class="contacto-left-overlay"></div>
+      <div class="contacto-left-bg"></div><div class="contacto-left-overlay"></div>
       <div class="contacto-left-content">
         <div>
           <p class="eyebrow">Contacto</p>
@@ -1090,91 +560,54 @@ footer{
           <p>Un asesor de Terragona se pondrá en contacto contigo en menos de 24 horas para presentarte el desarrollo, precios y disponibilidad.</p>
         </div>
         <div class="contacto-data">
-          <div class="contacto-data-item">
-            <span>Ubicación</span>
-            <p>Barreal del Ojo de Agua<br>Parras de la Fuente, Coahuila</p>
-          </div>
-          <div class="contacto-data-item">
-            <span>Distancia</span>
-            <p>8 minutos del centro histórico de Parras</p>
-          </div>
-          <div class="contacto-data-item">
-            <span>Lotes desde</span>
-            <p>900 m² · Urbanizados · Título de propiedad</p>
-          </div>
+          <div class="contacto-data-item"><span>Ubicación</span><p>Barreal del Ojo de Agua<br>Parras de la Fuente, Coahuila</p></div>
+          <div class="contacto-data-item"><span>Distancia</span><p>8 minutos del centro histórico de Parras</p></div>
+          <div class="contacto-data-item"><span>Lotes desde</span><p>900 m² · Urbanizados · Título de propiedad</p></div>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: FORM -->
+    <!-- RIGHT: FORM — cream -->
     <div class="contacto-right">
       <div class="form-title">Quiero <em>saber más</em></div>
       <div class="form-sub">Sin compromiso · Información confidencial</div>
-
       <form id="contact-form" novalidate>
         <div class="frow">
-          <div class="fgroup">
-            <label for="c-nombre">Nombre<span class="req">*</span></label>
-            <input id="c-nombre" type="text" placeholder="Tu nombre" required>
-            <div class="field-error" id="ce-nombre">Ingresa tu nombre</div>
-          </div>
-          <div class="fgroup">
-            <label for="c-apellido">Apellido<span class="req">*</span></label>
-            <input id="c-apellido" type="text" placeholder="Tu apellido" required>
-            <div class="field-error" id="ce-apellido">Ingresa tu apellido</div>
-          </div>
+          <div class="fgroup"><label for="c-nombre">Nombre<span class="req">*</span></label><input id="c-nombre" type="text" placeholder="Tu nombre" required><div class="field-error" id="ce-nombre">Ingresa tu nombre</div></div>
+          <div class="fgroup"><label for="c-apellido">Apellido<span class="req">*</span></label><input id="c-apellido" type="text" placeholder="Tu apellido" required><div class="field-error" id="ce-apellido">Ingresa tu apellido</div></div>
         </div>
-
         <div class="fgroup">
           <label>Teléfono<span class="req">*</span></label>
           <div style="display:flex;gap:8px;">
             <select id="c-pais" style="width:auto;min-width:100px;flex-shrink:0;">
-              <option value="+52">🇲🇽 +52</option>
-              <option value="+1">🇺🇸 +1</option>
-              <option value="+1ca">🇨🇦 +1</option>
-              <option value="+34">🇪🇸 +34</option>
-              <option value="+54">🇦🇷 +54</option>
-              <option value="+57">🇨🇴 +57</option>
-              <option value="+56">🇨🇱 +56</option>
+              <option value="+52">🇲🇽 +52</option><option value="+1">🇺🇸 +1</option>
+              <option value="+1ca">🇨🇦 +1</option><option value="+34">🇪🇸 +34</option>
+              <option value="+54">🇦🇷 +54</option><option value="+57">🇨🇴 +57</option>
             </select>
             <input id="c-tel" type="tel" placeholder="000 000 0000" required style="flex:1;">
           </div>
           <div class="field-error" id="ce-tel">Ingresa tu número</div>
         </div>
-
-        <div class="fgroup">
-          <label for="c-email">Correo electrónico<span class="req">*</span></label>
-          <input id="c-email" type="email" placeholder="correo@ejemplo.com" required>
-          <div class="field-error" id="ce-email">Ingresa un correo válido</div>
-        </div>
-
+        <div class="fgroup"><label for="c-email">Correo electrónico<span class="req">*</span></label><input id="c-email" type="email" placeholder="correo@ejemplo.com" required><div class="field-error" id="ce-email">Ingresa un correo válido</div></div>
         <div class="fgroup">
           <label for="c-interes">¿Qué te interesa?<span class="req">*</span></label>
           <select id="c-interes" required>
             <option value="" disabled selected>Selecciona una opción…</option>
-            <option>Lote residencial</option>
-            <option>Información y precios</option>
-            <option>Inversión patrimonial</option>
-            <option>Visita al desarrollo</option>
+            <option>Lote residencial</option><option>Información y precios</option>
+            <option>Inversión patrimonial</option><option>Visita al desarrollo</option>
           </select>
           <div class="field-error" id="ce-interes">Selecciona una opción</div>
         </div>
-
-        <div class="fgroup">
-          <label for="c-msg">Mensaje (opcional)</label>
-          <textarea id="c-msg" placeholder="¿Algo más que quieras decirnos?"></textarea>
-        </div>
-
+        <div class="fgroup"><label for="c-msg">Mensaje (opcional)</label><textarea id="c-msg" placeholder="¿Algo más que quieras decirnos?"></textarea></div>
         <button type="submit" class="form-btn" id="c-submit">Enviar solicitud →</button>
         <p class="form-note">Tu información es confidencial. Sin spam, jamás.</p>
       </form>
     </div>
   </div>
-
   FOOTER_PLACEHOLDER
 </div>
 
-<!-- ═══ FOOTER TEMPLATE ═══ -->
+<!-- FOOTER TEMPLATE -->
 <template id="footer-tpl">
 <footer>
   <div class="footer-grid">
@@ -1204,85 +637,43 @@ footer{
 </template>
 
 <script>
-// ── ROUTING ──
-const PAGES = ['inicio','comunidad','masterplan','contacto'];
-
-function goTo(page) {
-  PAGES.forEach(p => {
-    document.getElementById('page-'+p).classList.toggle('active', p===page);
-  });
-  document.querySelectorAll('[data-page]').forEach(a => {
-    a.classList.toggle('active', a.dataset.page===page);
-  });
-  window.scrollTo(0,0);
-  history.pushState(null,'','#'+page);
+const PAGES=['inicio','comunidad','masterplan','contacto'];
+function goTo(page){
+  PAGES.forEach(p=>{document.getElementById('page-'+p).classList.toggle('active',p===page);});
+  document.querySelectorAll('[data-page]').forEach(a=>{a.classList.toggle('active',a.dataset.page===page);});
+  window.scrollTo(0,0);history.pushState(null,'','#'+page);
 }
-
-// ── INJECT FOOTER INTO EACH PAGE ──
-document.querySelectorAll('.page').forEach(page => {
-  const tpl = document.getElementById('footer-tpl').innerHTML;
-  page.innerHTML = page.innerHTML.replace('FOOTER_PLACEHOLDER', tpl);
+document.querySelectorAll('.page').forEach(page=>{
+  const tpl=document.getElementById('footer-tpl').innerHTML;
+  page.innerHTML=page.innerHTML.replace('FOOTER_PLACEHOLDER',tpl);
 });
+const hash=location.hash.replace('#','');
+if(PAGES.includes(hash))goTo(hash);
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('solid',window.scrollY>40);});
+function toggleMobile(){document.getElementById('mobile-menu').classList.toggle('open');}
 
-// ── INIT FROM HASH ──
-const hash = location.hash.replace('#','');
-if (PAGES.includes(hash)) goTo(hash);
-
-// ── NAV SCROLL ──
-window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('solid', window.scrollY > 40);
-});
-
-// ── MOBILE MENU ──
-function toggleMobile() {
-  document.getElementById('mobile-menu').classList.toggle('open');
-}
-
-// ── FORM VALIDATION ──
-document.getElementById('contact-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  let valid = true;
-
-  function check(id, errId, fn) {
-    const el  = document.getElementById(id);
-    const err = document.getElementById(errId);
-    const ok  = fn(el.value.trim());
-    el.classList.toggle('error', !ok);
-    err.classList.toggle('visible', !ok);
-    if (!ok) valid = false;
-    el.addEventListener('input',  () => { el.classList.remove('error'); err.classList.remove('visible'); }, {once:true});
-    el.addEventListener('change', () => { el.classList.remove('error'); err.classList.remove('visible'); }, {once:true});
+document.getElementById('contact-form').addEventListener('submit',async function(e){
+  e.preventDefault();let valid=true;
+  function check(id,errId,fn){
+    const el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el.value.trim());
+    el.classList.toggle('error',!ok);err.classList.toggle('visible',!ok);
+    if(!ok)valid=false;
+    el.addEventListener('input',()=>{el.classList.remove('error');err.classList.remove('visible');},{once:true});
+    el.addEventListener('change',()=>{el.classList.remove('error');err.classList.remove('visible');},{once:true});
   }
-
-  check('c-nombre',  'ce-nombre',  v => v.length > 1);
-  check('c-apellido','ce-apellido',v => v.length > 1);
-  check('c-tel',     'ce-tel',     v => v.length > 5);
-  check('c-email',   'ce-email',   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
-  check('c-interes', 'ce-interes', v => v.length > 0);
-
-  if (!valid) return;
-
-  const btn = document.getElementById('c-submit');
-  btn.disabled = true;
-  btn.textContent = 'Enviando…';
-
-  const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/gqWZZaleYqxmnIvI1ZeV/webhook-trigger/99354e2c-eaf5-47e7-af7d-6984e0f70e47';
-  const THANKS  = 'https://landing.terragona.mx/thank-you-page';
-
-  const payload = {
-    first_name: document.getElementById('c-nombre').value.trim(),
-    last_name:  document.getElementById('c-apellido').value.trim(),
-    phone:      document.getElementById('c-pais').value + document.getElementById('c-tel').value.trim(),
-    email:      document.getElementById('c-email').value.trim(),
-    interes:    document.getElementById('c-interes').value,
-    mensaje:    document.getElementById('c-msg').value.trim(),
-  };
-
-  try {
-    await fetch(WEBHOOK, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
-  } catch(err) { console.warn('Webhook:', err); }
-
-  window.location.href = THANKS;
+  check('c-nombre','ce-nombre',v=>v.length>1);
+  check('c-apellido','ce-apellido',v=>v.length>1);
+  check('c-tel','ce-tel',v=>v.length>5);
+  check('c-email','ce-email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+  check('c-interes','ce-interes',v=>v.length>0);
+  if(!valid)return;
+  const btn=document.getElementById('c-submit');btn.disabled=true;btn.textContent='Enviando…';
+  const WEBHOOK='https://services.leadconnectorhq.com/hooks/gqWZZaleYqxmnIvI1ZeV/webhook-trigger/99354e2c-eaf5-47e7-af7d-6984e0f70e47';
+  const THANKS='https://landing.terragona.mx/thank-you-page';
+  const payload={first_name:document.getElementById('c-nombre').value.trim(),last_name:document.getElementById('c-apellido').value.trim(),phone:document.getElementById('c-pais').value+document.getElementById('c-tel').value.trim(),email:document.getElementById('c-email').value.trim(),interes:document.getElementById('c-interes').value,mensaje:document.getElementById('c-msg').value.trim()};
+  try{await fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}
+  catch(err){console.warn('Webhook:',err);}
+  window.location.href=THANKS;
 });
 </script>
 </body>
