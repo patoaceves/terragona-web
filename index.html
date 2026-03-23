@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terragona — Privada Residencial · Parras de la Fuente</title>
 <link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/69bd7b4afd4388ac7e44a139.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-926123525"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-926123525');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -14,8 +22,8 @@
   --ink2:   #2D250A;   /* darkest green — nav + footer */
   --moss:   #3A4220;   /* mossy section bg */
   --olive:  #3C3B22;
-  --cream:  #F5F0E8;
-  --cream2: #EDE6D8;
+  --cream:  #b7a38a;
+  --cream2: #a8957d;
   --gold:   #C8B49A;
   --white:  #FDFAF5;
   --muted:  rgba(253,250,245,.55);
@@ -137,11 +145,11 @@ footer{
 /* bg wrapper for pilares */
 .pilares-bg{background:var(--ink2);}
 
-/* VALLE — mossy left, cream-tinted right */
+/* VALLE — mossy left with fade, tan right */
 .valle-section{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;}
 .valle-img{position:relative;overflow:hidden;background:var(--img3) center/cover no-repeat;min-height:500px;}
-.valle-img::before{content:'';position:absolute;inset:0;z-index:1;background:rgba(42,48,22,.3);}
-.valle-img::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to right,rgba(42,48,22,.1) 0%,rgba(22,16,2,.72) 100%);}
+.valle-img::before{content:'';position:absolute;inset:0;z-index:1;background:rgba(42,48,22,.25);}
+.valle-img::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to right,transparent 40%,rgba(38,44,18,.88) 100%);}
 .valle-text{background:rgba(38,44,18,.92);padding:clamp(48px,7vh,96px) clamp(32px,5vw,72px);display:flex;flex-direction:column;justify-content:center;}
 .valle-text h2{font-family:var(--serif);font-size:clamp(32px,3.5vw,52px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:20px;}
 .valle-text h2 em{font-style:italic;color:var(--gold);}
@@ -184,33 +192,33 @@ footer{
 /* COMUNIDAD bg — mossy warm */
 .comunidad-bg{background:rgba(38,44,18,.95);}
 
-/* ENTORNO — cream left panel */
+/* ENTORNO — tan left panel */
 .entorno-section{display:grid;grid-template-columns:1fr 1fr;}
 .entorno-img{min-height:520px;background:var(--img2) center/cover no-repeat;position:relative;overflow:hidden;}
 .entorno-img::before{content:'';position:absolute;inset:0;z-index:1;background:rgba(60,59,34,.38);}
-.entorno-img::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to left,rgba(60,59,34,.06) 0%,rgba(22,16,2,.65) 100%);}
-.entorno-text{background:rgba(245,240,232,.96);padding:clamp(48px,7vh,88px) clamp(32px,5vw,72px);display:flex;flex-direction:column;justify-content:center;}
-.entorno-text .eyebrow{color:var(--earth);}
-.entorno-text .eyebrow::before{background:var(--earth);}
+.entorno-img::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to left,transparent 40%,#b7a38a 100%);}
+.entorno-text{background:#b7a38a;padding:clamp(48px,7vh,88px) clamp(32px,5vw,72px);display:flex;flex-direction:column;justify-content:center;}
+.entorno-text .eyebrow{color:var(--ink2);letter-spacing:.35em;}
+.entorno-text .eyebrow::before{background:var(--ink2);}
 .entorno-text h2{font-family:var(--serif);font-size:clamp(30px,3.2vw,48px);font-weight:300;color:var(--ink2);line-height:1.1;margin-bottom:18px;}
-.entorno-text h2 em{font-style:italic;color:var(--earth);}
-.entorno-text p{font-size:14px;font-weight:300;letter-spacing:.04em;color:rgba(45,37,10,.58);line-height:1.9;margin-bottom:28px;}
+.entorno-text h2 em{font-style:italic;color:var(--deep);}
+.entorno-text p{font-size:14px;font-weight:300;letter-spacing:.04em;color:rgba(45,37,10,.72);line-height:1.9;margin-bottom:28px;}
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;}
-.tag{font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(45,37,10,.5);border:1px solid rgba(139,111,78,.3);padding:7px 14px;border-radius:2px;}
+.tag{font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(45,37,10,.65);border:1px solid rgba(45,37,10,.25);padding:7px 14px;border-radius:2px;}
 
-/* AMENIDADES — cream bg */
+/* AMENIDADES — tan bg */
 .amen-section{padding:clamp(64px,10vh,104px) clamp(24px,5vw,72px);max-width:1200px;margin:0 auto;}
 .amen-header{text-align:center;margin-bottom:56px;}
 .amen-header h2{font-family:var(--serif);font-size:clamp(30px,3.5vw,50px);font-weight:300;color:var(--ink2);line-height:1.1;}
-.amen-header h2 em{font-style:italic;color:var(--earth);}
-.amen-header .eyebrow{color:var(--earth);}
-.amen-header .eyebrow::before{background:var(--earth);}
-.amen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(139,111,78,.15);}
-.amen-item{background:rgba(245,240,232,.92);padding:36px 28px;border-top:2px solid transparent;backdrop-filter:blur(4px);transition:border-color .3s,background .3s;}
-.amen-item:hover{border-color:var(--earth);background:rgba(237,230,216,.98);}
-.amen-num{font-family:var(--serif);font-size:26px;font-weight:300;font-style:italic;color:rgba(139,111,78,.6);margin-bottom:10px;}
+.amen-header h2 em{font-style:italic;color:var(--deep);}
+.amen-header .eyebrow{color:var(--ink2);}
+.amen-header .eyebrow::before{background:var(--ink2);}
+.amen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(45,37,10,.18);}
+.amen-item{background:rgba(45,37,10,.08);padding:36px 28px;border-top:2px solid transparent;transition:border-color .3s,background .3s;}
+.amen-item:hover{border-color:var(--deep);background:rgba(45,37,10,.14);}
+.amen-num{font-family:var(--serif);font-size:26px;font-weight:300;font-style:italic;color:rgba(45,37,10,.45);margin-bottom:10px;}
 .amen-name{font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);margin-bottom:10px;}
-.amen-desc{font-size:13px;font-weight:300;letter-spacing:.04em;color:rgba(45,37,10,.48);line-height:1.75;}
+.amen-desc{font-size:13px;font-weight:300;letter-spacing:.04em;color:rgba(45,37,10,.62);line-height:1.75;}
 
 /* ═══════════════════════════════════════
    PAGE 3 — MASTER PLAN  (dark green)
@@ -274,27 +282,27 @@ footer{
 .contacto-data-item span{font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);}
 .contacto-data-item p{font-size:14px;font-weight:300;color:rgba(253,250,245,.48);line-height:1.6;margin:0;}
 
-/* Contacto right — cream */
-.contacto-right{padding:clamp(48px,8vh,88px) clamp(32px,5vw,64px);background:var(--cream);display:flex;flex-direction:column;justify-content:center;}
+/* Contacto right — tan */
+.contacto-right{padding:clamp(48px,8vh,88px) clamp(32px,5vw,64px);background:#b7a38a;display:flex;flex-direction:column;justify-content:center;}
 .form-title{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--ink2);margin-bottom:6px;}
-.form-title em{font-style:italic;color:var(--earth);}
-.form-sub{font-size:12px;font-weight:300;letter-spacing:.1em;color:rgba(45,37,10,.38);margin-bottom:36px;}
+.form-title em{font-style:italic;color:var(--deep);}
+.form-sub{font-size:12px;font-weight:300;letter-spacing:.1em;color:rgba(45,37,10,.45);margin-bottom:36px;}
 .fgroup{margin-bottom:18px;}
-.fgroup label{display:block;font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(45,37,10,.45);margin-bottom:6px;}
-.fgroup label .req{color:#C8614A;margin-left:2px;}
-.fgroup input,.fgroup select,.fgroup textarea{width:100%;background:rgba(45,37,10,.06);border:1px solid rgba(92,74,50,.2);border-radius:2px;padding:12px 14px;font-family:var(--sans);font-size:13px;font-weight:300;color:var(--ink2);outline:none;transition:border-color .2s,background .2s;-webkit-appearance:none;}
-.fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{border-color:var(--earth);background:rgba(45,37,10,.08);}
-.fgroup input::placeholder,.fgroup textarea::placeholder{color:rgba(45,37,10,.32);}
-.fgroup select option{color:#1a1208;background:#e8dcc8;}
+.fgroup label{display:block;font-size:12px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(45,37,10,.55);margin-bottom:6px;}
+.fgroup label .req{color:#8B3A2A;margin-left:2px;}
+.fgroup input,.fgroup select,.fgroup textarea{width:100%;background:rgba(45,37,10,.08);border:1px solid rgba(45,37,10,.2);border-radius:2px;padding:12px 14px;font-family:var(--sans);font-size:13px;font-weight:300;color:var(--ink2);outline:none;transition:border-color .2s,background .2s;-webkit-appearance:none;}
+.fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{border-color:var(--deep);background:rgba(45,37,10,.12);}
+.fgroup input::placeholder,.fgroup textarea::placeholder{color:rgba(45,37,10,.38);}
+.fgroup select option{color:#1a1208;background:#c4b09a;}
 .fgroup textarea{resize:vertical;min-height:100px;line-height:1.6;}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.field-error{font-size:12px;color:#C8614A;margin-top:4px;display:none;}
+.field-error{font-size:12px;color:#8B3A2A;margin-top:4px;display:none;}
 .field-error.visible{display:block;}
-.fgroup input.error,.fgroup select.error{border-color:#C8614A;}
-.form-btn{width:100%;padding:15px;margin-top:8px;background:var(--deep);border:none;border-radius:2px;color:var(--white);font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
-.form-btn:hover{background:var(--earth);}
+.fgroup input.error,.fgroup select.error{border-color:#8B3A2A;}
+.form-btn{width:100%;padding:15px;margin-top:8px;background:var(--ink2);border:none;border-radius:2px;color:var(--white);font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+.form-btn:hover{background:var(--deep);}
 .form-btn:disabled{opacity:.55;cursor:not-allowed;}
-.form-note{font-size:12px;font-weight:300;letter-spacing:.06em;color:rgba(45,37,10,.4);text-align:center;margin-top:12px;}
+.form-note{font-size:12px;font-weight:300;letter-spacing:.06em;color:rgba(45,37,10,.45);text-align:center;margin-top:12px;}
 
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:1024px){
@@ -454,10 +462,10 @@ footer{
     </div>
   </section>
 
-  <!-- ENTORNO — cream right panel -->
+  <!-- ENTORNO — tan left panel, image right with fade -->
   <section class="entorno-section">
     <div class="entorno-text">
-      <p class="eyebrow dark">Entorno natural</p>
+      <p class="eyebrow">Entorno natural</p>
       <h2>Montañas, nogales<br>y <em>tranquilidad.</em></h2>
       <p>El Barreal del Ojo de Agua es un valle singular en el corazón de Coahuila. Terragona aprovecha este paisaje único para crear un desarrollo que integra la naturaleza con la vida privada.</p>
       <p>La Sierra de Parras enmarca cada lote. Los nogales centenarios dan sombra y carácter al lugar.</p>
@@ -470,7 +478,7 @@ footer{
   </section>
 
   <!-- AMENIDADES — cream bg -->
-  <section style="background:var(--cream2);">
+  <section style="background:#b7a38a;">
     <div class="amen-section">
       <div class="amen-header">
         <p class="eyebrow dark" style="justify-content:center;display:flex;align-items:center;">Desarrollo</p>
