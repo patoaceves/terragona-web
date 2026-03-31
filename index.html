@@ -143,18 +143,18 @@ footer{
 /* PILARES */
 .pilares-section{padding:clamp(72px,10vh,120px) clamp(24px,5vw,72px);max-width:1200px;margin:0 auto;}
 .pilares-header{text-align:center;margin-bottom:64px;}
-.pilares-header h2{font-family:var(--serif);font-size:clamp(36px,4vw,58px);font-weight:300;color:var(--ink2);line-height:1.1;}
-.pilares-header h2 em{font-style:italic;color:var(--deep);}
-.pilares-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(45,37,10,.2);}
-.pilar-card{background:rgba(30,22,4,.62);padding:48px 36px;border:1px solid rgba(200,180,154,.1);border-left:2px solid rgba(139,111,78,.6);backdrop-filter:blur(8px);transition:background .3s;}
-.pilar-card:hover{background:rgba(30,22,4,.8);}
-.pilar-num{font-family:var(--serif);font-size:40px;font-weight:300;color:rgba(184,151,90,.65);line-height:1;margin-bottom:16px;letter-spacing:-.01em;}
+.pilares-header h2{font-family:var(--serif);font-size:clamp(36px,4vw,58px);font-weight:300;color:var(--white);line-height:1.1;}
+.pilares-header h2 em{font-style:italic;color:var(--gold);}
+.pilares-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,180,154,.12);}
+.pilar-card{background:rgba(253,250,245,.06);padding:48px 36px;border:1px solid rgba(200,180,154,.12);border-left:2px solid rgba(200,180,154,.4);backdrop-filter:blur(8px);transition:background .3s;}
+.pilar-card:hover{background:rgba(253,250,245,.1);}
+.pilar-num{font-family:var(--serif);font-size:40px;font-weight:300;color:rgba(200,180,154,.5);line-height:1;margin-bottom:16px;letter-spacing:-.01em;}
 .pilar-title{font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
 .pilar-card h3{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--white);line-height:1.2;margin-bottom:16px;}
 .pilar-card h3 em{font-style:italic;color:var(--cream);}
 .pilar-card p{font-size:14px;font-weight:300;letter-spacing:.04em;color:rgba(253,250,245,.42);line-height:1.85;}
-.pilar-rule{width:28px;height:1px;background:rgba(184,151,90,.4);margin:20px 0;}
-.pilares-bg{background:#b7a38a;}
+.pilar-rule{width:28px;height:1px;background:rgba(200,180,154,.35);margin:20px 0;}
+.pilares-bg{background:#5C4A32;}
 
 /* ¿POR QUÉ PARRAS? */
 .porque-section{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;}
@@ -615,7 +615,7 @@ svg.mapa{width:100%;height:auto;display:block;}
       <p class="eyebrow" style="justify-content:center;display:flex;align-items:center;margin-bottom:24px;">Precio de lanzamiento</p>
       <h2>Tu lote en Terragona<br><em>te espera.</em></h2>
       <p>Superficies desde 900 m². Certeza jurídica integral. Plusvalía a corto plazo.</p>
-      <button class="btn-primary" onclick="goTo('contacto')">Solicitar información →</button>
+      <button class="btn-primary" onclick="goToTerreno()">Solicitar información →</button>
     </div>
   </section>
   FOOTER_PLACEHOLDER
@@ -663,7 +663,7 @@ svg.mapa{width:100%;height:auto;display:block;}
     <div class="entorno-img" style="background-image:var(--img3);"></div>
   </section>
 
-  <section class="amen-cream" style="background:#b7a38a;">
+  <section style="background:#5C4A32;">
     <div class="amen-section">
       <div class="amen-header">
         <p class="eyebrow" style="justify-content:center;display:flex;align-items:center;">Desarrollo</p>
@@ -708,7 +708,7 @@ svg.mapa{width:100%;height:auto;display:block;}
   </section>
 
   <!-- ELIGE TU TERRENO — MAP -->
-  <div class="map-frame-section">
+  <div class="map-frame-section" id="elige-terreno">
     <div class="map-section-header">
       <p class="section-eyebrow">Nuestro espacio</p>
       <h2>Elige tu <em>terreno</em></h2>
@@ -955,7 +955,13 @@ svg.mapa{width:100%;height:auto;display:block;}
 
 <script>
 const PAGES=['inicio','comunidad','masterplan','contacto'];
-function goTo(page){
+function goToTerreno(){
+  goTo('masterplan');
+  setTimeout(()=>{
+    const el=document.getElementById('elige-terreno');
+    if(el)el.scrollIntoView({behavior:'smooth'});
+  },120);
+}
   PAGES.forEach(p=>{document.getElementById('page-'+p).classList.toggle('active',p===page);});
   document.querySelectorAll('[data-page]').forEach(a=>{a.classList.toggle('active',a.dataset.page===page);});
   window.scrollTo(0,0);history.pushState(null,'','#'+page);
