@@ -962,6 +962,7 @@ function goToTerreno(){
     if(el)el.scrollIntoView({behavior:'smooth'});
   },120);
 }
+function goTo(page){
   PAGES.forEach(p=>{document.getElementById('page-'+p).classList.toggle('active',p===page);});
   document.querySelectorAll('[data-page]').forEach(a=>{a.classList.toggle('active',a.dataset.page===page);});
   window.scrollTo(0,0);history.pushState(null,'','#'+page);
