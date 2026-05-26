@@ -3,7 +3,7 @@
     { "src": "**/*", "use": "@vercel/static" }
   ],
   "rewrites": [
-    { "source": "/((?!assets|.*\\.[a-zA-Z0-9]+$).*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "cleanUrls": true,
   "trailingSlash": false
