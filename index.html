@@ -1093,10 +1093,17 @@ document.querySelectorAll('.page').forEach(page=>{
   let initial=location.pathname.replace(/^\/+|\/+$/g,'');
   if(!initial){
     const h=location.hash.replace('#','');
-    if(PAGES.includes(h)){initial=h;history.replaceState({page:h},'','/'+h);}
+    if(PAGES.includes(h)){initial=h;}
   }
-  if(PAGES.includes(initial))goTo(initial);
-  else if(initial)history.replaceState({page:'inicio'},'','/');
+  if(PAGES.includes(initial)){
+    PAGES.forEach(p=>{document.getElementById('page-'+p).classList.toggle('active',p===initial);});
+    document.querySelectorAll('[data-page]').forEach(a=>{a.classList.toggle('active',a.dataset.page===initial);});
+    const cleanUrl=initial==='inicio'?'/':'/'+initial;
+    history.replaceState({page:initial},'',cleanUrl);
+  } else if(initial){
+    /* Unknown path — send to home */
+    history.replaceState({page:'inicio'},'','/');
+  }
 })();
 window.addEventListener('popstate',()=>{
   const p=location.pathname.replace(/^\/+|\/+$/g,'')||'inicio';
