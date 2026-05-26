@@ -64,7 +64,7 @@ nav.solid{background:rgba(22,16,2,.99);}
 .nav-links{display:flex;gap:40px;list-style:none;}
 .nav-links a{font-size:12px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:rgba(253,250,245,.42);transition:color .2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--gold);}
-.nav-cta{font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--deep);padding:10px 22px;border-radius:2px;transition:background .2s;cursor:pointer;border:none;}
+.nav-cta{font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--deep);padding:14px 28px;border-radius:2px;transition:background .2s;cursor:pointer;border:none;}
 .nav-cta:hover{background:var(--earth);}
 .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
 .nav-burger span{width:24px;height:1px;background:rgba(253,250,245,.6);transition:.3s;}
@@ -465,8 +465,8 @@ svg.mapa{width:100%;height:auto;display:block;}
 .pop-plan-val{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--white);line-height:1.2;margin-bottom:4px;}
 .pop-plan-val em{font-style:italic;color:var(--gold);}
 .pop-plan-desc{font-size:11px;font-weight:300;color:rgba(253,250,245,.38);line-height:1.6;}
-.pop-cta{display:block;width:100%;padding:13px;background:var(--deep);border:none;border-radius:8px;color:var(--white);font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;text-align:center;text-decoration:none;transition:background .25s,transform .15s;}
-.pop-cta:hover{background:var(--earth);transform:translateY(-1px);}
+.pop-cta{display:block;width:100%;padding:14px 28px;background:var(--deep);border:none;border-radius:2px;color:var(--white);font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;text-align:center;text-decoration:none;transition:background .2s;}
+.pop-cta:hover{background:var(--earth);}
 .pop-note{font-size:10px;font-weight:300;color:rgba(253,250,245,.25);text-align:center;margin-top:8px;letter-spacing:.06em;}
 .pop-price-row{display:flex;flex-direction:column;}
 @media(max-width:680px){
@@ -503,10 +503,10 @@ svg.mapa{width:100%;height:auto;display:block;}
     <img src="https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/699e7be15dfd50f729069032.png" alt="Terragona">
   </div>
   <ul class="nav-links">
-    <li><a href="#" onclick="goTo('inicio');return false;" data-page="inicio">Inicio</a></li>
-    <li><a href="#" onclick="goTo('comunidad');return false;" data-page="comunidad">Comunidad</a></li>
-    <li><a href="#" onclick="goTo('masterplan');return false;" data-page="masterplan">Master Plan</a></li>
-    <li><a href="#" onclick="goTo('contacto');return false;" data-page="contacto">Contacto</a></li>
+    <li><a href="/" onclick="goTo('inicio');return false;" data-page="inicio">Inicio</a></li>
+    <li><a href="/comunidad" onclick="goTo('comunidad');return false;" data-page="comunidad">Comunidad</a></li>
+    <li><a href="/masterplan" onclick="goTo('masterplan');return false;" data-page="masterplan">Master Plan</a></li>
+    <li><a href="/contacto" onclick="goTo('contacto');return false;" data-page="contacto">Contacto</a></li>
   </ul>
   <button class="nav-cta" onclick="goTo('contacto')">Solicitar información</button>
   <div class="nav-burger" onclick="toggleMobile()" id="burger">
@@ -516,10 +516,10 @@ svg.mapa{width:100%;height:auto;display:block;}
 
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-close" onclick="toggleMobile()">✕ cerrar</div>
-  <a href="#" onclick="goTo('inicio');toggleMobile();return false;">Inicio</a>
-  <a href="#" onclick="goTo('comunidad');toggleMobile();return false;">Comunidad</a>
-  <a href="#" onclick="goTo('masterplan');toggleMobile();return false;">Master Plan</a>
-  <a href="#" onclick="goTo('contacto');toggleMobile();return false;">Contacto</a>
+  <a href="/" onclick="goTo('inicio');toggleMobile();return false;">Inicio</a>
+  <a href="/comunidad" onclick="goTo('comunidad');toggleMobile();return false;">Comunidad</a>
+  <a href="/masterplan" onclick="goTo('masterplan');toggleMobile();return false;">Master Plan</a>
+  <a href="/contacto" onclick="goTo('contacto');toggleMobile();return false;">Contacto</a>
 </div>
 
 <!-- ════ INICIO ════ -->
@@ -630,7 +630,7 @@ svg.mapa{width:100%;height:auto;display:block;}
             </div>
           </div>
         </div>
-        <button onclick="openFormModal()" style="font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--deep);padding:13px 24px;border-radius:8px;border:none;cursor:pointer;white-space:nowrap;transition:background .25s,transform .15s;" onmouseover="this.style.background='var(--earth)'" onmouseout="this.style.background='var(--deep)'">Solicitar información →</button>
+        <a href="/contacto" onclick="goTo('contacto');return false;" class="btn-primary" style="text-decoration:none;display:inline-block;white-space:nowrap;">Solicitar información</a>
       </div>
 
       <div id="contado-grid" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(200,180,154,.12);margin-bottom:40px;">
@@ -990,10 +990,10 @@ svg.mapa{width:100%;height:auto;display:block;}
     </div>
     <div class="footer-col">
       <h4>Navegación</h4>
-      <a href="#" onclick="goTo('inicio');return false;">Inicio</a>
-      <a href="#" onclick="goTo('comunidad');return false;">Comunidad</a>
-      <a href="#" onclick="goTo('masterplan');return false;">Master Plan</a>
-      <a href="#" onclick="goTo('contacto');return false;">Contacto</a>
+      <a href="/" onclick="goTo('inicio');return false;">Inicio</a>
+      <a href="/comunidad" onclick="goTo('comunidad');return false;">Comunidad</a>
+      <a href="/masterplan" onclick="goTo('masterplan');return false;">Master Plan</a>
+      <a href="/contacto" onclick="goTo('contacto');return false;">Contacto</a>
     </div>
     <div class="footer-col">
       <h4>Contacto</h4>
@@ -1054,40 +1054,11 @@ svg.mapa{width:100%;height:auto;display:block;}
       </div>
     </div>
 
-    <button class="pop-cta" onclick="closePop();openFormModal();">Solicitar información →</button>
+    <button class="pop-cta" onclick="closePop();goTo('contacto');">Solicitar información</button>
     <p class="pop-note">Sin compromiso · Tu información es confidencial</p>
   </div>
 </div>
 
-<!-- FORM MODAL -->
-<div id="formModal" style="display:none;position:fixed;inset:0;z-index:1200;background:rgba(22,16,2,.88);backdrop-filter:blur(16px);overflow-y:auto;">
-  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;">
-    <div style="background:rgba(30,24,6,.97);border:1px solid rgba(200,180,154,.2);border-radius:12px;padding:40px 40px 32px;width:100%;max-width:440px;position:relative;">
-      <button onclick="closeFormModal()" style="position:absolute;top:16px;right:18px;background:none;border:none;color:rgba(253,250,245,.35);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;">✕ cerrar</button>
-      <p style="font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Sin compromiso</p>
-      <p style="font-family:var(--serif);font-size:26px;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:28px;">Solicita tu <em style="font-style:italic;color:var(--gold);">información</em><br>hoy mismo</p>
-      <form id="modal-form" novalidate>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
-          <div><label style="display:block;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.4);margin-bottom:5px;">Nombre <span style="color:#C8614A;">*</span></label><input id="m-nombre" type="text" placeholder="Tu nombre" required style="width:100%;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px 12px;font-family:var(--sans);font-size:13px;font-weight:300;color:var(--white);outline:none;"><div class="field-error" id="me-nombre" style="font-size:10px;color:#C8614A;margin-top:4px;display:none;">Ingresa tu nombre</div></div>
-          <div><label style="display:block;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.4);margin-bottom:5px;">Apellido <span style="color:#C8614A;">*</span></label><input id="m-apellido" type="text" placeholder="Tu apellido" required style="width:100%;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px 12px;font-family:var(--sans);font-size:13px;font-weight:300;color:var(--white);outline:none;"><div class="field-error" id="me-apellido" style="font-size:10px;color:#C8614A;margin-top:4px;display:none;">Ingresa tu apellido</div></div>
-        </div>
-        <div style="margin-bottom:16px;"><label style="display:block;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.4);margin-bottom:5px;">Teléfono <span style="color:#C8614A;">*</span></label><div style="display:flex;gap:8px;"><select id="m-pais" style="width:auto;min-width:100px;flex-shrink:0;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px;font-family:var(--sans);font-size:13px;color:var(--white);outline:none;-webkit-appearance:none;"><option value="+52">🇲🇽 +52</option><option value="+1">🇺🇸 +1</option><option value="+1ca">🇨🇦 +1</option><option value="+34">🇪🇸 +34</option><option value="+54">🇦🇷 +54</option><option value="+57">🇨🇴 +57</option></select><input id="m-tel" type="tel" placeholder="000 000 0000" required style="flex:1;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px 12px;font-family:var(--sans);font-size:13px;color:var(--white);outline:none;"></div><div class="field-error" id="me-tel" style="font-size:10px;color:#C8614A;margin-top:4px;display:none;">Ingresa tu número</div></div>
-        <div style="margin-bottom:16px;"><label style="display:block;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.4);margin-bottom:5px;">Correo <span style="color:#C8614A;">*</span></label><input id="m-email" type="email" placeholder="correo@ejemplo.com" required style="width:100%;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px 12px;font-family:var(--sans);font-size:13px;color:var(--white);outline:none;"><div class="field-error" id="me-email" style="font-size:10px;color:#C8614A;margin-top:4px;display:none;">Ingresa un correo válido</div></div>
-        <div style="margin-bottom:20px;"><label style="display:block;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.4);margin-bottom:5px;">¿Qué te interesa? <span style="color:#C8614A;">*</span></label><select id="m-interes" required style="width:100%;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px 12px;font-family:var(--sans);font-size:13px;color:var(--white);outline:none;-webkit-appearance:none;cursor:pointer;"><option value="" disabled selected>Selecciona una opción…</option><option>Lote residencial</option><option>Información y precios</option><option>Inversión patrimonial</option><option>Visita al desarrollo</option></select><div class="field-error" id="me-interes" style="font-size:10px;color:#C8614A;margin-top:4px;display:none;">Selecciona una opción</div></div>
-        <button type="submit" id="m-submit" style="width:100%;padding:13px;background:rgba(92,74,50,.85);border:none;border-radius:6px;color:var(--white);font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;">Quiero más información →</button>
-        <p style="font-size:10px;font-weight:300;color:rgba(253,250,245,.3);margin-top:10px;text-align:center;">Tu información es confidencial. Sin spam, jamás.</p>
-      </form>
-      <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(200,180,154,.12);">
-        <p style="font-size:9px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(200,180,154,.4);margin-bottom:8px;">O contáctanos directamente</p>
-        <div style="display:flex;flex-direction:column;gap:6px;">
-          <a href="tel:+528421488182" style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:300;color:rgba(253,250,245,.55);text-decoration:none;letter-spacing:.04em;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="opacity:.6;flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 10.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012.81 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+52 842 148 8182</a>
-          <a href="https://wa.me/528421488182" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:300;color:rgba(253,250,245,.55);text-decoration:none;letter-spacing:.04em;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="opacity:.6;flex-shrink:0;"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>WhatsApp</a>
-          <a href="mailto:info@terragona.mx" style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:300;color:rgba(253,250,245,.55);text-decoration:none;letter-spacing:.04em;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="opacity:.6;flex-shrink:0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@terragona.mx</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- TOOLTIP -->
 <div class="tooltip" id="tip">
@@ -1109,14 +1080,32 @@ function goToTerreno(){
 function goTo(page){
   PAGES.forEach(p=>{document.getElementById('page-'+p).classList.toggle('active',p===page);});
   document.querySelectorAll('[data-page]').forEach(a=>{a.classList.toggle('active',a.dataset.page===page);});
-  window.scrollTo(0,0);history.pushState(null,'','#'+page);
+  window.scrollTo(0,0);
+  const url=page==='inicio'?'/':'/'+page;
+  history.pushState({page},'',url);
 }
 document.querySelectorAll('.page').forEach(page=>{
   const tpl=document.getElementById('footer-tpl').innerHTML;
   page.innerHTML=page.innerHTML.replace('FOOTER_PLACEHOLDER',tpl);
 });
-const hash=location.hash.replace('#','');
-if(PAGES.includes(hash))goTo(hash);
+/* Resolve initial page from path or legacy hash */
+(function(){
+  let initial=location.pathname.replace(/^\/+|\/+$/g,'');
+  if(!initial){
+    const h=location.hash.replace('#','');
+    if(PAGES.includes(h)){initial=h;history.replaceState({page:h},'','/'+h);}
+  }
+  if(PAGES.includes(initial))goTo(initial);
+  else if(initial)history.replaceState({page:'inicio'},'','/');
+})();
+window.addEventListener('popstate',()=>{
+  const p=location.pathname.replace(/^\/+|\/+$/g,'')||'inicio';
+  if(PAGES.includes(p)){
+    PAGES.forEach(x=>{document.getElementById('page-'+x).classList.toggle('active',x===p);});
+    document.querySelectorAll('[data-page]').forEach(a=>{a.classList.toggle('active',a.dataset.page===p);});
+    window.scrollTo(0,0);
+  }
+});
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('solid',window.scrollY>40);});
 function toggleMobile(){document.getElementById('mobile-menu').classList.toggle('open');}
 
@@ -1162,7 +1151,7 @@ document.getElementById('contact-form').addEventListener('submit',async function
   check('c-interes','ce-interes',v=>v.length>0);
   if(!valid)return;
   const btn=document.getElementById('c-submit');btn.disabled=true;btn.textContent='Enviando…';
-  const WEBHOOK='https://services.leadconnectorhq.com/hooks/gqWZZaleYqxmnIvI1ZeV/webhook-trigger/99354e2c-eaf5-47e7-af7d-6984e0f70e47';
+  const WEBHOOK='https://services.leadconnectorhq.com/hooks/gqWZZaleYqxmnIvI1ZeV/webhook-trigger/298d1021-0499-4f4a-b9ea-455af21dc302';
   const THANKS='https://landing.terragona.mx/thank-you-page';
   const payload={first_name:document.getElementById('c-nombre').value.trim(),last_name:document.getElementById('c-apellido').value.trim(),phone:document.getElementById('c-pais').value+document.getElementById('c-tel').value.trim(),email:document.getElementById('c-email').value.trim(),interes:document.getElementById('c-interes').value,mensaje:document.getElementById('c-msg').value.trim()};
   try{await fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}
@@ -1170,38 +1159,9 @@ document.getElementById('contact-form').addEventListener('submit',async function
   window.location.href=THANKS;
 });
 
-/* POPUP + FORM MODAL */
-function openFormModal(){document.getElementById('formModal').style.display='block';document.body.style.overflow='hidden';}
-function closeFormModal(){document.getElementById('formModal').style.display='none';document.body.style.overflow='';}
+/* POPUP */
 function closePop(){document.getElementById('popOverlay').classList.remove('show');document.getElementById('popBox').classList.remove('show');document.body.style.overflow='';}
 setTimeout(()=>{document.getElementById('popOverlay').classList.add('show');document.getElementById('popBox').classList.add('show');document.body.style.overflow='hidden';},10000);
-document.getElementById('formModal').addEventListener('click',function(e){if(e.target===this)closeFormModal();});
-
-/* MODAL FORM SUBMIT */
-document.getElementById('modal-form').addEventListener('submit',async function(e){
-  e.preventDefault();let valid=true;
-  function check(id,errId,fn){
-    const el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el.value.trim());
-    el.style.borderColor=ok?'rgba(200,180,154,.2)':'#C8614A';
-    err.style.display=ok?'none':'block';
-    if(!ok)valid=false;
-    el.addEventListener('input',()=>{el.style.borderColor='rgba(200,180,154,.2)';err.style.display='none';},{once:true});
-    el.addEventListener('change',()=>{el.style.borderColor='rgba(200,180,154,.2)';err.style.display='none';},{once:true});
-  }
-  check('m-nombre','me-nombre',v=>v.length>1);
-  check('m-apellido','me-apellido',v=>v.length>1);
-  check('m-tel','me-tel',v=>v.length>5);
-  check('m-email','me-email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
-  check('m-interes','me-interes',v=>v.length>0);
-  if(!valid)return;
-  const btn=document.getElementById('m-submit');btn.disabled=true;btn.textContent='Enviando…';
-  const WEBHOOK='https://services.leadconnectorhq.com/hooks/gqWZZaleYqxmnIvI1ZeV/webhook-trigger/99354e2c-eaf5-47e7-af7d-6984e0f70e47';
-  const THANKS='https://landing.terragona.mx/thank-you-page';
-  const payload={first_name:document.getElementById('m-nombre').value.trim(),last_name:document.getElementById('m-apellido').value.trim(),phone:document.getElementById('m-pais').value+document.getElementById('m-tel').value.trim(),email:document.getElementById('m-email').value.trim(),interes:document.getElementById('m-interes').value};
-  try{await fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}
-  catch(err){console.warn('Webhook:',err);}
-  window.location.href=THANKS;
-});
 </script>
 </body>
 </html>

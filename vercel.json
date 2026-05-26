@@ -1,0 +1,12 @@
+{
+  "builds": [
+    { "src": "**/*", "use": "@vercel/static" }
+  ],
+  "rewrites": [
+    { "source": "/comunidad", "destination": "/index.html" },
+    { "source": "/masterplan", "destination": "/index.html" },
+    { "source": "/contacto", "destination": "/index.html" }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
