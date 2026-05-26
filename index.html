@@ -1159,7 +1159,7 @@ document.getElementById('contact-form').addEventListener('submit',async function
   if(!valid)return;
   const btn=document.getElementById('c-submit');btn.disabled=true;btn.textContent='Enviando…';
   const WEBHOOK='https://services.leadconnectorhq.com/hooks/gqWZZaleYqxmnIvI1ZeV/webhook-trigger/298d1021-0499-4f4a-b9ea-455af21dc302';
-  const THANKS='https://landing.terragona.mx/thank-you-page';
+  const THANKS='/thank-you';
   const payload={first_name:document.getElementById('c-nombre').value.trim(),last_name:document.getElementById('c-apellido').value.trim(),phone:document.getElementById('c-pais').value+document.getElementById('c-tel').value.trim(),email:document.getElementById('c-email').value.trim(),interes:document.getElementById('c-interes').value,mensaje:document.getElementById('c-msg').value.trim()};
   try{await fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}
   catch(err){console.warn('Webhook:',err);}

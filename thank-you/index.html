@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terragona — Gracias por tu interés</title>
+<link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/69bd7b4afd4388ac7e44a139.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-926123525"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-926123525');
+  gtag('event', 'conversion', {
+    'send_to': 'AW-926123525/saJbCKfUqY4cEIWMzrkD',
+    'value': 1.0,
+    'currency': 'MXN'
+  });
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #3C3B22;
+  --ink2:   #2D250A;
+  --moss:   #3A4220;
+  --olive:  #3C3B22;
+  --cream:  #b7a38a;
+  --cream2: #a8957d;
+  --gold:   #C8B49A;
+  --white:  #FDFAF5;
+  --muted:  rgba(253,250,245,.55);
+  --earth:  #8B6F4E;
+  --deep:   #5C4A32;
+  --serif:  'Cormorant Garamond', serif;
+  --sans:   'Jost', sans-serif;
+  --img1:   url('https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/699e752d2837e831e7676560.png');
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--white);background:var(--ink2);overflow-x:hidden;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+
+/* ═══ NAV ═══ */
+nav {
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(24px,5vw,72px);height:112px;
+  background:rgba(30,22,4,.95);
+  border-bottom:1px solid rgba(184,151,90,.12);
+  backdrop-filter:blur(18px);
+}
+.nav-logo{cursor:pointer;}
+.nav-logo img{height:96px;width:auto;opacity:.92;filter:brightness(1.1);}
+.nav-links{display:flex;gap:40px;list-style:none;}
+.nav-links a{font-size:12px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:rgba(253,250,245,.42);transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--deep);padding:14px 28px;border-radius:2px;transition:background .2s;cursor:pointer;border:none;text-decoration:none;display:inline-block;}
+.nav-cta:hover{background:var(--earth);}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.nav-burger span{width:24px;height:1px;background:rgba(253,250,245,.6);transition:.3s;}
+
+.mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:rgba(22,16,2,.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:36px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:var(--serif);font-size:32px;font-weight:300;color:rgba(253,250,245,.6);letter-spacing:.05em;transition:color .2s;}
+.mobile-menu a:hover{color:var(--white);}
+.mobile-close{position:absolute;top:28px;right:28px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.35);cursor:pointer;}
+
+/* ═══ HERO (Thank you) ═══ */
+.hero{position:relative;padding-top:112px;overflow:hidden;}
+.hero-bg{position:absolute;inset:-8%;background:var(--img1) center/cover no-repeat;filter:brightness(.42) saturate(.8);animation:bgDrift 28s ease-in-out infinite alternate;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(30,22,4,.78) 0%,rgba(58,66,20,.22) 55%,rgba(30,22,4,.82) 100%);}
+@keyframes bgDrift{from{transform:scale(1.04) translate(0,0);}to{transform:scale(1.07) translate(-1.5%,-1%);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.7);}to{opacity:1;transform:scale(1);}}
+@keyframes shimmer{0%,100%{opacity:.5;}50%{opacity:1;}}
+
+.hero-content{position:relative;z-index:2;width:100%;max-width:720px;margin:0 auto;padding:80px clamp(24px,5vw,40px);text-align:center;animation:fadeUp .9s ease both;}
+
+.ornament{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:rgba(139,111,78,.15);border:1px solid rgba(200,180,154,.3);margin-bottom:28px;animation:scaleIn .7s cubic-bezier(.34,1.56,.64,1) .2s both;}
+.ornament-inner{font-size:24px;color:var(--gold);animation:shimmer 3s ease-in-out infinite;}
+
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;animation:fadeUp .7s ease .35s both;}
+.eyebrow::before{content:'';display:inline-block;width:18px;height:1px;background:var(--gold);vertical-align:middle;margin-right:12px;}
+
+h1{font-family:var(--serif);font-size:clamp(40px,5.5vw,72px);font-weight:300;line-height:1.05;letter-spacing:-.01em;color:var(--white);margin-bottom:24px;animation:fadeUp .7s ease .45s both;}
+h1 em{font-style:italic;color:var(--gold);}
+
+.subtitle{font-size:16px;font-weight:300;line-height:1.8;color:rgba(253,250,245,.6);margin:0 auto 48px;max-width:520px;animation:fadeUp .7s ease .55s both;}
+
+.next-label{font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);text-align:left;margin-bottom:16px;animation:fadeUp .7s ease .6s both;}
+.steps{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(200,180,154,.1);margin-bottom:48px;animation:fadeUp .7s ease .65s both;}
+.step{background:rgba(30,24,6,.55);backdrop-filter:blur(6px);padding:22px 28px;display:flex;align-items:flex-start;gap:20px;text-align:left;}
+.step-num{font-family:var(--serif);font-size:28px;font-weight:300;font-style:italic;color:var(--gold);line-height:1;flex-shrink:0;width:32px;padding-top:2px;}
+.step-text{flex:1;}
+.step-text strong{display:block;font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(253,250,245,.85);margin-bottom:6px;}
+.step-text p{font-size:14px;font-weight:300;color:rgba(253,250,245,.55);line-height:1.7;}
+
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s ease .75s both;}
+.btn-primary{padding:14px 28px;background:var(--deep);border:none;border-radius:2px;color:var(--white);font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap;transition:background .2s;}
+.btn-primary:hover{background:var(--earth);}
+.btn-ghost{padding:14px 28px;background:rgba(253,250,245,.06);border:1px solid rgba(253,250,245,.4);border-radius:2px;color:rgba(253,250,245,.82);font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap;transition:border-color .2s,color .2s,background .2s;}
+.btn-ghost:hover{border-color:rgba(253,250,245,.75);color:var(--white);background:rgba(253,250,245,.12);}
+
+/* ═══ FOOTER ═══ */
+footer{
+  background:rgba(22,16,2,.98);
+  border-top:1px solid rgba(200,180,154,.12);
+  padding:48px clamp(24px,5vw,72px) 32px;
+}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;max-width:1200px;margin:0 auto;padding-bottom:40px;border-bottom:1px solid rgba(184,151,90,.1);}
+.footer-brand img{height:80px;margin-bottom:14px;opacity:.9;}
+.footer-brand p{font-size:12px;font-weight:300;letter-spacing:.14em;color:rgba(253,250,245,.3);line-height:1.8;text-transform:uppercase;}
+.footer-col h4{font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.footer-col p,.footer-col a{font-size:13px;font-weight:300;letter-spacing:.08em;color:rgba(253,250,245,.38);line-height:2;display:block;transition:color .2s;}
+.footer-col a:hover{color:rgba(253,250,245,.72);}
+.footer-contact-links{display:flex;flex-direction:column;gap:6px;}
+.footer-contact-links a{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:300;letter-spacing:.06em;color:rgba(253,250,245,.38);text-decoration:none;transition:color .2s;line-height:1.8;}
+.footer-contact-links a:hover{color:rgba(253,250,245,.72);}
+.footer-contact-links svg{opacity:.55;flex-shrink:0;}
+.footer-bottom{max-width:1200px;margin:28px auto 0;display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-size:12px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(253,250,245,.18);}
+
+@media(max-width:880px){
+  .nav-links,.nav-cta{display:none;}
+  .nav-burger{display:flex;}
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
+}
+@media(max-width:560px){
+  nav{height:88px;padding:0 20px;}
+  .nav-logo img{height:64px;}
+  .hero{padding-top:88px;min-height:calc(100vh - 88px);}
+  .hero-content{padding:40px 20px;}
+  .cta-row{flex-direction:column;align-items:stretch;}
+  .btn-primary,.btn-ghost{width:100%;text-align:center;}
+  .step{padding:18px 20px;gap:14px;}
+  .step-num{font-size:24px;width:24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <img src="https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/699e7be15dfd50f729069032.png" alt="Terragona">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/comunidad">Comunidad</a></li>
+    <li><a href="/masterplan">Master Plan</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+  </ul>
+  <a href="/contacto" class="nav-cta">Solicitar información</a>
+  <div class="nav-burger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-close" onclick="toggleMobile()">✕ cerrar</div>
+  <a href="/">Inicio</a>
+  <a href="/comunidad">Comunidad</a>
+  <a href="/masterplan">Master Plan</a>
+  <a href="/contacto">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="ornament"><div class="ornament-inner">✦</div></div>
+    <p class="eyebrow">Solicitud recibida</p>
+    <h1>Gracias por tu<br><em>interés en Terragona</em></h1>
+    <p class="subtitle">Tu solicitud llegó correctamente. Un asesor de Terragona se pondrá en contacto contigo en menos de 24 horas para darte toda la información que necesitas.</p>
+
+    <p class="next-label">¿Qué sigue?</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Revisión de tu solicitud</strong>
+          <p>Nuestro equipo revisará tu información y preparará una atención personalizada para ti.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Contacto en menos de 24 horas</strong>
+          <p>Un asesor te llamará o escribirá para presentarte el desarrollo, precios y disponibilidad.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Visita al desarrollo (opcional)</strong>
+          <p>Si lo deseas, coordinaremos una visita privada para que conozcas Terragona en persona.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://wa.me/528421488182" class="btn-primary" target="_blank" rel="noopener">Escríbenos por WhatsApp →</a>
+      <a href="/" class="btn-ghost">Volver al inicio</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://assets.cdn.filesafe.space/gqWZZaleYqxmnIvI1ZeV/media/699e7be15dfd50f729069032.png" alt="Terragona">
+      <p>Privada residencial<br>Barreal del Ojo de Agua<br>Parras de la Fuente · Coahuila</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <a href="/">Inicio</a>
+      <a href="/comunidad">Comunidad</a>
+      <a href="/masterplan">Master Plan</a>
+      <a href="/contacto">Contacto</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <div class="footer-contact-links">
+        <a href="tel:+528421488182">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 10.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012.81 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +52 842 148 8182
+        </a>
+        <a href="mailto:info@terragona.mx">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@terragona.mx
+        </a>
+        <a href="https://wa.me/528421488182" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Terragona · Privada Residencial</p>
+    <p>Parras de la Fuente · Coahuila · México</p>
+  </div>
+</footer>
+
+<script>
+function toggleMobile(){document.getElementById('mobile-menu').classList.toggle('open');}
+</script>
+</body>
+</html>
