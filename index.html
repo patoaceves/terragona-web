@@ -435,6 +435,64 @@ svg.mapa{width:100%;height:auto;display:block;}
   .propuesta-section{padding:60px 20px;}
   .map-frame-section{padding:0 16px;}
 }
+
+/* ── Popup propuesta ── */
+@keyframes popIn{from{opacity:0;transform:translate(-50%,-48%) scale(.96);}to{opacity:1;transform:translate(-50%,-50%) scale(1);}}
+.pop-overlay{position:fixed;inset:0;z-index:1100;background:rgba(8,6,3,.72);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .35s;}
+.pop-overlay.show{opacity:1;pointer-events:all;}
+.pop-box{position:fixed;top:50%;left:50%;z-index:1101;transform:translate(-50%,-50%);width:min(1080px,94vw);max-height:90vh;display:grid;grid-template-columns:7fr 3fr;border-radius:16px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.7),0 0 0 1px rgba(200,180,154,.15);opacity:0;pointer-events:none;}
+.pop-box.show{animation:popIn .45s cubic-bezier(.34,1.4,.64,1) forwards;pointer-events:all;}
+.pop-img{position:relative;min-height:360px;}
+.pop-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.pop-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,rgba(8,6,3,.45));}
+.pop-body{background:rgba(16,12,6,.96);border-left:1px solid rgba(200,180,154,.12);padding:40px 36px;display:flex;flex-direction:column;justify-content:center;gap:0;overflow-y:auto;}
+.pop-close{position:absolute;top:16px;right:20px;z-index:10;background:rgba(16,12,6,.85);border:1px solid rgba(200,180,154,.5);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:rgba(253,250,245,.9);font-size:16px;line-height:1;transition:background .2s,color .2s;}
+.pop-close:hover{background:rgba(253,250,245,.2);color:var(--white);}
+.pop-eyebrow{font-family:var(--serif);font-size:28px;font-weight:300;font-style:italic;letter-spacing:.04em;text-transform:none;color:var(--gold);margin-bottom:10px;}
+.pop-title{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--white);line-height:1.15;margin-bottom:6px;}
+.pop-title em{font-style:italic;color:var(--gold);}
+.pop-price-label{font-size:9px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(200,180,154,.45);margin-bottom:4px;margin-top:20px;}
+.pop-price{font-family:var(--serif);font-size:44px;font-weight:300;font-style:italic;color:var(--white);line-height:1;}
+.pop-price span{font-size:.52em;color:var(--gold);font-style:normal;}
+.pop-desde{display:inline-flex;align-items:center;gap:8px;margin-top:22px;margin-bottom:20px;padding:7px 14px;background:rgba(139,111,78,.18);border:1px solid rgba(200,180,154,.3);border-radius:4px;}
+.pop-desde-num{font-family:var(--serif);font-size:26px;font-weight:300;font-style:italic;color:var(--gold);line-height:1;}
+.pop-desde-label{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(253,250,245,.55);line-height:1.3;}
+.pop-divider{height:1px;background:rgba(200,180,154,.12);margin:4px 0 16px;}
+.pop-plans{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:22px;}
+.precio-tachado{display:inline;font-family:var(--serif);font-weight:300;font-style:italic;color:rgba(200,180,154,.38);text-decoration:line-through;text-decoration-color:rgba(200,180,154,.5);text-decoration-thickness:1.5px;}
+.pop-plan{background:rgba(253,250,245,.04);border:1px solid rgba(200,180,154,.1);border-radius:6px;padding:14px 16px;}
+.pop-plan-label{font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.pop-plan-val{font-family:var(--serif);font-size:20px;font-weight:300;color:var(--white);line-height:1.2;margin-bottom:4px;}
+.pop-plan-val em{font-style:italic;color:var(--gold);}
+.pop-plan-desc{font-size:11px;font-weight:300;color:rgba(253,250,245,.38);line-height:1.6;}
+.pop-cta{display:block;width:100%;padding:13px;background:var(--deep);border:none;border-radius:8px;color:var(--white);font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;text-align:center;text-decoration:none;transition:background .25s,transform .15s;}
+.pop-cta:hover{background:var(--earth);transform:translateY(-1px);}
+.pop-note{font-size:10px;font-weight:300;color:rgba(253,250,245,.25);text-align:center;margin-top:8px;letter-spacing:.06em;}
+.pop-price-row{display:flex;flex-direction:column;}
+@media(max-width:680px){
+  .pop-box{grid-template-columns:1fr;width:min(480px,94vw);max-height:88vh;overflow-y:auto;}
+  .pop-img{min-height:220px;max-height:240px;}
+  .pop-img::after{background:linear-gradient(to bottom,transparent 50%,rgba(8,6,3,.45));}
+  .pop-body{padding:28px 24px;}
+  .pop-price{font-size:36px;}
+  .pop-plans{grid-template-columns:1fr;}
+}
+@media(max-width:400px){.pop-plans{grid-template-columns:1fr;}}
+
+/* ── Propuesta mobile fixes ── */
+@media(max-width:640px){
+  #prop-header{flex-direction:column !important;align-items:flex-start !important;}
+  #prop-header button{width:100% !important;box-sizing:border-box !important;white-space:normal !important;}
+  #contado-grid{grid-template-columns:1fr !important;}
+  #prop-section{padding:0 !important;}
+  .pop-box{grid-template-columns:1fr !important;width:92vw !important;max-height:92vh !important;overflow-y:auto !important;}
+  .pop-body{padding:28px 22px !important;max-height:none !important;}
+  .pop-price{font-size:36px !important;}
+  .pop-plans{grid-template-columns:1fr !important;}
+  .pop-price-row{flex-direction:row !important;align-items:center !important;gap:12px !important;}
+  .pop-price-row .pop-desde{margin-top:0 !important;margin-bottom:0 !important;flex-shrink:0 !important;}
+  .pop-close{top:12px !important;right:12px !important;}
+}
 </style>
 </head>
 <body>
@@ -549,28 +607,43 @@ svg.mapa{width:100%;height:auto;display:block;}
 
   <!-- PROPUESTA ECONÓMICA -->
   <section class="propuesta-section">
-    <div class="propuesta-inner">
+    <div id="prop-section" class="propuesta-inner">
       <p class="section-eyebrow">Inversión</p>
       <h2 class="section-title">Propuesta <em>económica</em></h2>
 
-      <div class="precio-banner">
+      <div id="prop-header" style="background:rgba(30,24,6,.6);backdrop-filter:blur(10px);border:1px solid rgba(200,180,154,.15);border-left:3px solid var(--gold);padding:32px 40px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
         <div>
-          <p class="precio-label">Precio de lanzamiento</p>
-          <p class="precio-big">$3,300 <span>MXN / m²</span></p>
+          <p style="font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(200,80,60,.8);margin-bottom:10px;display:flex;align-items:center;gap:8px;"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:rgba(200,80,60,.8);"></span>Últimos meses antes de actualizar precios</p>
+          <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px;">
+            <span class="precio-tachado" style="font-size:clamp(20px,2vw,30px);">$3,750 MXN / m²</span>
+            <p style="font-family:var(--serif);font-size:clamp(36px,4vw,58px);font-weight:300;font-style:italic;color:var(--white);line-height:1;margin:0;">$3,375 <span style="font-size:.55em;color:var(--gold);">MXN / m²</span></p>
+          </div>
+          <p style="font-size:12px;font-weight:300;letter-spacing:.06em;color:rgba(253,250,245,.4);margin-bottom:20px;"></p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <div style="display:inline-flex;flex-direction:row;align-items:center;gap:12px;padding:16px 28px;background:rgba(139,111,78,.2);border:1px solid rgba(200,180,154,.35);border-radius:4px;white-space:nowrap;">
+              <span style="font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(253,250,245,.55);">Enganche desde</span>
+              <span style="font-family:var(--serif);font-size:26px;font-weight:300;font-style:italic;color:var(--gold);line-height:1;">$600,000</span>
+            </div>
+            <div style="display:inline-flex;flex-direction:row;align-items:center;gap:12px;padding:16px 28px;background:rgba(200,80,60,.1);border:1px solid rgba(200,80,60,.3);border-radius:4px;white-space:nowrap;">
+              <span style="font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,131,106,.9);">Válido hasta</span>
+              <span style="font-family:var(--serif);font-size:26px;font-weight:300;font-style:italic;color:#e8836a;line-height:1;">30 jun 2026</span>
+            </div>
+          </div>
         </div>
-        <button class="precio-btn" onclick="goTo('contacto')">Solicitar información →</button>
+        <button onclick="openFormModal()" style="font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--white);background:var(--deep);padding:13px 24px;border-radius:8px;border:none;cursor:pointer;white-space:nowrap;transition:background .25s,transform .15s;" onmouseover="this.style.background='var(--earth)'" onmouseout="this.style.background='var(--deep)'">Solicitar información →</button>
       </div>
 
-      <div class="pago-grid">
-        <div class="pago-card">
-          <p class="pago-tag">Pago de contado</p>
-          <p class="pago-num">10% <em>descuento</em></p>
-          <p class="pago-desc">Precio preferencial al liquidar la totalidad del lote en una sola exhibición.</p>
-        </div>
-        <div class="pago-card">
-          <p class="pago-tag">Plan de financiamiento</p>
-          <p class="pago-num">24 meses <em>sin intereses</em></p>
-          <p class="pago-desc">10% de depósito para apartar tu lote. El resto en mensualidades cómodas sin costo adicional.</p>
+      <div id="contado-grid" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(200,180,154,.12);margin-bottom:40px;">
+        <div style="background:rgba(30,24,6,.55);backdrop-filter:blur(8px);padding:32px 36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+          <div>
+            <p style="font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Plan de financiamiento</p>
+            <p style="font-family:var(--serif);font-size:32px;font-weight:300;color:var(--white);line-height:1.1;margin-bottom:10px;">24 meses <em style="font-style:italic;">sin intereses</em></p>
+            <p style="font-size:13px;font-weight:300;color:rgba(253,250,245,.45);letter-spacing:.04em;line-height:1.7;max-width:480px;">Aparta tu lote con un enganche desde $600,000 y paga el resto en mensualidades cómodas sin costo adicional.</p>
+          </div>
+          <div style="display:inline-flex;flex-direction:row;align-items:center;gap:12px;padding:16px 28px;background:rgba(139,111,78,.2);border:1px solid rgba(200,180,154,.35);border-radius:4px;flex-shrink:0;white-space:nowrap;">
+            <span style="font-family:var(--serif);font-size:28px;font-weight:300;font-style:italic;color:var(--gold);line-height:1;">7 lotes</span>
+            <span style="font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(253,250,245,.45);">disponibles</span>
+          </div>
         </div>
       </div>
 
@@ -947,6 +1020,75 @@ svg.mapa{width:100%;height:auto;display:block;}
 </footer>
 </template>
 
+<!-- POPUP PROPUESTA ECONÓMICA -->
+<div class="pop-overlay" id="popOverlay" onclick="closePop()"></div>
+<div class="pop-box" id="popBox">
+  <button class="pop-close" onclick="closePop()" aria-label="Cerrar">✕</button>
+  <div class="pop-img">
+    <img src="/assets/png/render-plano.jpeg" alt="Render Terragona">
+  </div>
+  <div class="pop-body">
+    <p class="pop-eyebrow">Últimos meses a este precio</p>
+
+    <p class="pop-price-label">Precio hasta el 30 de junio</p>
+    <div style="margin-bottom:4px;"><span class="precio-tachado" style="font-size:22px;">$3,750 MXN / m²</span></div>
+    <div class="pop-price">$3,375 <span>MXN / m²</span></div>
+
+    <div class="pop-desde" style="display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 16px;">
+      <div class="pop-desde-label" style="font-size:9px;margin-bottom:2px;">Enganche desde</div>
+      <div class="pop-desde-num" style="font-size:32px;">$600,000</div>
+    </div>
+
+    <div class="pop-divider"></div>
+
+    <div class="pop-plans">
+      <div class="pop-plan" style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <div>
+          <p class="pop-plan-label">Financiamiento</p>
+          <p class="pop-plan-val" style="font-size:26px;">24 <em>meses sin intereses</em></p>
+        </div>
+      </div>
+      <div class="pop-plan" style="background:rgba(200,80,60,.07);border-color:rgba(200,80,60,.25);">
+        <p class="pop-plan-label" style="color:rgba(232,131,106,.9);">Válido hasta</p>
+        <p class="pop-plan-val" style="font-size:26px;color:#e8836a;"><em style="color:#e8836a;">30 de junio 2026</em></p>
+      </div>
+    </div>
+
+    <button class="pop-cta" onclick="closePop();openFormModal();">Solicitar información →</button>
+    <p class="pop-note">Sin compromiso · Tu información es confidencial</p>
+  </div>
+</div>
+
+<!-- FORM MODAL -->
+<div id="formModal" style="display:none;position:fixed;inset:0;z-index:1200;background:rgba(22,16,2,.88);backdrop-filter:blur(16px);overflow-y:auto;">
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;">
+    <div style="background:rgba(30,24,6,.97);border:1px solid rgba(200,180,154,.2);border-radius:12px;padding:40px 40px 32px;width:100%;max-width:440px;position:relative;">
+      <button onclick="closeFormModal()" style="position:absolute;top:16px;right:18px;background:none;border:none;color:rgba(253,250,245,.35);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;">✕ cerrar</button>
+      <p style="font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Sin compromiso</p>
+      <p style="font-family:var(--serif);font-size:26px;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:28px;">Solicita tu <em style="font-style:italic;color:var(--gold);">información</em><br>hoy mismo</p>
+      <form id="modal-form" novalidate>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+          <div><label style="display:block;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.4);margin-bottom:5px;">Nombre <span style="color:#C8614A;">*</span></label><input id="m-nombre" type="text" placeholder="Tu nombre" required style="width:100%;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px 12px;font-family:var(--sans);font-size:13px;font-weight:300;color:var(--white);outline:none;"><div class="field-error" id="me-nombre" style="font-size:10px;color:#C8614A;margin-top:4px;display:none;">Ingresa tu nombre</div></div>
+          <div><label style="display:block;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.4);margin-bottom:5px;">Apellido <span style="color:#C8614A;">*</span></label><input id="m-apellido" type="text" placeholder="Tu apellido" required style="width:100%;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px 12px;font-family:var(--sans);font-size:13px;font-weight:300;color:var(--white);outline:none;"><div class="field-error" id="me-apellido" style="font-size:10px;color:#C8614A;margin-top:4px;display:none;">Ingresa tu apellido</div></div>
+        </div>
+        <div style="margin-bottom:16px;"><label style="display:block;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.4);margin-bottom:5px;">Teléfono <span style="color:#C8614A;">*</span></label><div style="display:flex;gap:8px;"><select id="m-pais" style="width:auto;min-width:100px;flex-shrink:0;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px;font-family:var(--sans);font-size:13px;color:var(--white);outline:none;-webkit-appearance:none;"><option value="+52">🇲🇽 +52</option><option value="+1">🇺🇸 +1</option><option value="+1ca">🇨🇦 +1</option><option value="+34">🇪🇸 +34</option><option value="+54">🇦🇷 +54</option><option value="+57">🇨🇴 +57</option></select><input id="m-tel" type="tel" placeholder="000 000 0000" required style="flex:1;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px 12px;font-family:var(--sans);font-size:13px;color:var(--white);outline:none;"></div><div class="field-error" id="me-tel" style="font-size:10px;color:#C8614A;margin-top:4px;display:none;">Ingresa tu número</div></div>
+        <div style="margin-bottom:16px;"><label style="display:block;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.4);margin-bottom:5px;">Correo <span style="color:#C8614A;">*</span></label><input id="m-email" type="email" placeholder="correo@ejemplo.com" required style="width:100%;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px 12px;font-family:var(--sans);font-size:13px;color:var(--white);outline:none;"><div class="field-error" id="me-email" style="font-size:10px;color:#C8614A;margin-top:4px;display:none;">Ingresa un correo válido</div></div>
+        <div style="margin-bottom:20px;"><label style="display:block;font-size:10px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,250,245,.4);margin-bottom:5px;">¿Qué te interesa? <span style="color:#C8614A;">*</span></label><select id="m-interes" required style="width:100%;background:rgba(253,250,245,.08);border:1px solid rgba(200,180,154,.2);border-radius:6px;padding:10px 12px;font-family:var(--sans);font-size:13px;color:var(--white);outline:none;-webkit-appearance:none;cursor:pointer;"><option value="" disabled selected>Selecciona una opción…</option><option>Lote residencial</option><option>Información y precios</option><option>Inversión patrimonial</option><option>Visita al desarrollo</option></select><div class="field-error" id="me-interes" style="font-size:10px;color:#C8614A;margin-top:4px;display:none;">Selecciona una opción</div></div>
+        <button type="submit" id="m-submit" style="width:100%;padding:13px;background:rgba(92,74,50,.85);border:none;border-radius:6px;color:var(--white);font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;">Quiero más información →</button>
+        <p style="font-size:10px;font-weight:300;color:rgba(253,250,245,.3);margin-top:10px;text-align:center;">Tu información es confidencial. Sin spam, jamás.</p>
+      </form>
+      <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(200,180,154,.12);">
+        <p style="font-size:9px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(200,180,154,.4);margin-bottom:8px;">O contáctanos directamente</p>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <a href="tel:+528421488182" style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:300;color:rgba(253,250,245,.55);text-decoration:none;letter-spacing:.04em;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="opacity:.6;flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 10.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012.81 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+52 842 148 8182</a>
+          <a href="https://wa.me/528421488182" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:300;color:rgba(253,250,245,.55);text-decoration:none;letter-spacing:.04em;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="opacity:.6;flex-shrink:0;"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>WhatsApp</a>
+          <a href="mailto:info@terragona.mx" style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:300;color:rgba(253,250,245,.55);text-decoration:none;letter-spacing:.04em;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="opacity:.6;flex-shrink:0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@terragona.mx</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- TOOLTIP -->
 <div class="tooltip" id="tip">
   <div class="tttitle" id="tt"></div>
@@ -1023,6 +1165,39 @@ document.getElementById('contact-form').addEventListener('submit',async function
   const WEBHOOK='https://services.leadconnectorhq.com/hooks/gqWZZaleYqxmnIvI1ZeV/webhook-trigger/99354e2c-eaf5-47e7-af7d-6984e0f70e47';
   const THANKS='https://landing.terragona.mx/thank-you-page';
   const payload={first_name:document.getElementById('c-nombre').value.trim(),last_name:document.getElementById('c-apellido').value.trim(),phone:document.getElementById('c-pais').value+document.getElementById('c-tel').value.trim(),email:document.getElementById('c-email').value.trim(),interes:document.getElementById('c-interes').value,mensaje:document.getElementById('c-msg').value.trim()};
+  try{await fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}
+  catch(err){console.warn('Webhook:',err);}
+  window.location.href=THANKS;
+});
+
+/* POPUP + FORM MODAL */
+function openFormModal(){document.getElementById('formModal').style.display='block';document.body.style.overflow='hidden';}
+function closeFormModal(){document.getElementById('formModal').style.display='none';document.body.style.overflow='';}
+function closePop(){document.getElementById('popOverlay').classList.remove('show');document.getElementById('popBox').classList.remove('show');document.body.style.overflow='';}
+setTimeout(()=>{document.getElementById('popOverlay').classList.add('show');document.getElementById('popBox').classList.add('show');document.body.style.overflow='hidden';},10000);
+document.getElementById('formModal').addEventListener('click',function(e){if(e.target===this)closeFormModal();});
+
+/* MODAL FORM SUBMIT */
+document.getElementById('modal-form').addEventListener('submit',async function(e){
+  e.preventDefault();let valid=true;
+  function check(id,errId,fn){
+    const el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el.value.trim());
+    el.style.borderColor=ok?'rgba(200,180,154,.2)':'#C8614A';
+    err.style.display=ok?'none':'block';
+    if(!ok)valid=false;
+    el.addEventListener('input',()=>{el.style.borderColor='rgba(200,180,154,.2)';err.style.display='none';},{once:true});
+    el.addEventListener('change',()=>{el.style.borderColor='rgba(200,180,154,.2)';err.style.display='none';},{once:true});
+  }
+  check('m-nombre','me-nombre',v=>v.length>1);
+  check('m-apellido','me-apellido',v=>v.length>1);
+  check('m-tel','me-tel',v=>v.length>5);
+  check('m-email','me-email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+  check('m-interes','me-interes',v=>v.length>0);
+  if(!valid)return;
+  const btn=document.getElementById('m-submit');btn.disabled=true;btn.textContent='Enviando…';
+  const WEBHOOK='https://services.leadconnectorhq.com/hooks/gqWZZaleYqxmnIvI1ZeV/webhook-trigger/99354e2c-eaf5-47e7-af7d-6984e0f70e47';
+  const THANKS='https://landing.terragona.mx/thank-you-page';
+  const payload={first_name:document.getElementById('m-nombre').value.trim(),last_name:document.getElementById('m-apellido').value.trim(),phone:document.getElementById('m-pais').value+document.getElementById('m-tel').value.trim(),email:document.getElementById('m-email').value.trim(),interes:document.getElementById('m-interes').value};
   try{await fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});}
   catch(err){console.warn('Webhook:',err);}
   window.location.href=THANKS;
