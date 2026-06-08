@@ -409,6 +409,7 @@ svg.mapa{width:100%;height:auto;display:block;}
 .form-btn:hover{background:rgba(200,180,154,.25);border-color:rgba(200,180,154,.6);}
 .form-btn:disabled{opacity:.45;cursor:not-allowed;}
 .form-note{font-size:12px;font-weight:300;letter-spacing:.06em;color:rgba(253,250,245,.28);text-align:center;margin-top:12px;}
+.hp-field{position:absolute!important;left:-9999px!important;top:-9999px!important;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;}
 
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:1024px){
@@ -945,6 +946,10 @@ svg.mapa{width:100%;height:auto;display:block;}
       <div class="form-title">Quiero <em>saber más</em></div>
       <div class="form-sub">Sin compromiso · Información confidencial</div>
       <form id="contact-form" novalidate>
+        <div class="hp-field" aria-hidden="true">
+          <label for="c-website">No llenar este campo</label>
+          <input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
         <div class="frow">
           <div class="fgroup"><label for="c-nombre">Nombre<span class="req">*</span></label><input id="c-nombre" type="text" placeholder="Tu nombre" required><div class="field-error" id="ce-nombre">Ingresa tu nombre</div></div>
           <div class="fgroup"><label for="c-apellido">Apellido<span class="req">*</span></label><input id="c-apellido" type="text" placeholder="Tu apellido" required><div class="field-error" id="ce-apellido">Ingresa tu apellido</div></div>
@@ -1142,8 +1147,15 @@ function mv(e){
 }
 
 /* CONTACT FORM */
+const FORM_TS=Date.now();
 document.getElementById('contact-form').addEventListener('submit',async function(e){
-  e.preventDefault();let valid=true;
+  e.preventDefault();
+  /* --- Anti-bot (silencioso: el bot cree que envio) --- */
+  const hp=document.getElementById('c-website');
+  if(hp&&hp.value.trim()!==''){window.location.href='/thank-you';return;}
+  if(Date.now()-FORM_TS<3500){window.location.href='/thank-you';return;}
+  if(/(https?:\/\/|www\.|<a\s|\[url)/i.test(document.getElementById('c-msg').value)){window.location.href='/thank-you';return;}
+  let valid=true;
   function check(id,errId,fn){
     const el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el.value.trim());
     el.classList.toggle('error',!ok);err.classList.toggle('visible',!ok);
