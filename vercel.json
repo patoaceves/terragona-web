@@ -1,6 +1,16 @@
 {
   "rewrites": [
-    { "source": "/thank-you", "destination": "/thank-you/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/thank-you",
+      "destination": "/thank-you/index.html"
+    },
+    {
+      "source": "/aviso-de-privacidad",
+      "destination": "/aviso-de-privacidad/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
